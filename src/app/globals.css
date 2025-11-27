@@ -1,26 +1,413 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Condiment&family=Rancho&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #1E1E1E;
+  background: #F5F7FA;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 1, 'tnum' 0, 'onum' 1, 'lnum' 0, 'dlig' 0;
 }
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #232249;
+  outline-offset: 2px;
+}
+
+/* Custom utility classes */
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #1A73E8 0%, #6C63FF 100%);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Professional Typography Styles */
+  .hero-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-title-accent {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 15px rgba(255, 192, 70, 0.3);
+  }
+
+  .hero-subtitle {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.7;
+  }
+
+  .hero-brand {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* Modern Header Brand Styles */
+  .header-brand-primary {
+    font-family: 'Rancho', cursive;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 4px rgba(26, 115, 232, 0.2);
+  }
+
+  .header-brand-secondary {
+    font-family: 'Rancho', cursive;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    text-shadow: 0 2px 4px rgba(255, 192, 70, 0.2);
+  }
+
+  /* Professional Header Styles */
+  .header-glass {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-link {
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #1A73E8, #FFC046);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Mobile menu animations */
+  .mobile-menu-item {
+    animation: slideInFromRight 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  @keyframes slideInFromRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: brightness(0.8) contrast(1.1) saturate(1.2);
+  }
+
+  /* Enhanced mobile video optimization - eliminate white spaces */
+  @media (max-width: 768px) {
+    .video-background {
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: brightness(0.75) contrast(1.15) saturate(1.1);
+    }
+  }
+
+  /* Extra small devices - prevent any white space */
+  @media (max-width: 480px) {
+    .video-background video {
+      object-position: center 35%;
+    }
+  }
+
+  /* Professional video styling */
+  .video-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(26, 115, 232, 0.1) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(255, 192, 70, 0.1) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Mobile-first responsive improvements */
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.25rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 0.25rem !important;
+    }
+    
+    .hero-title-accent {
+      font-size: 1.5rem !important;
+      line-height: 1.1 !important;
+    }
+    
+    .hero-subtitle {
+      font-size: 0.7rem !important;
+      line-height: 1.4 !important;
+      padding: 0 0.5rem !important;
+      margin-top: 0.5rem !important;
+    }
+
+    .hero-brand {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  /* Small devices optimization */
+  @media (min-width: 481px) and (max-width: 640px) {
+    .hero-title {
+      font-size: 1.875rem !important;
+      line-height: 1.25 !important;
+    }
+    
+    .hero-title-accent {
+      font-size: 2.25rem !important;
+      line-height: 1.2 !important;
+    }
+
+    .hero-subtitle {
+      font-size: 0.875rem !important;
+      line-height: 1.6 !important;
+    }
+  }
+
+  /* Medium devices */
+  @media (min-width: 641px) and (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem !important;
+    }
+    
+    .hero-title-accent {
+      font-size: 3rem !important;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem !important;
+    }
+  }
+
+  /* Ensure full viewport coverage and prevent overflow */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Modern Services Section Styles */
+  .service-card-hover {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .service-card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(26, 115, 232, 0.15);
+  }
+
+  .gradient-border {
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(255, 192, 70, 0.1));
+    padding: 1px;
+    border-radius: 1rem;
+  }
+
+  .gradient-border-inner {
+    background: white;
+    border-radius: calc(1rem - 1px);
+  }
+
+  /* Modern animations */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Professional backdrop blur */
+  .backdrop-blur-professional {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  @media (max-width: 768px) {
+    #home {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  /* Ensure video doesn't cause layout shifts */
+  video {
+    display: block;
+  }
+
+  /* Fix for iOS and mobile video playback */
+  video::-webkit-media-controls,
+  video::-webkit-media-controls-panel,
+  video::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
+  
+  video::-moz-media-controls {
+    display: none !important;
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Container with responsive padding */
+  .container {
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  /* Responsive section spacing */
+  .section-spacing {
+    padding: 3rem 0;
+  }
+  
+  @media (min-width: 640px) {
+    .section-spacing {
+      padding: 4rem 0;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-spacing {
+      padding: 5rem 0;
+    }
+  }
+}
+
+/* Animation improvements for mobile */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hover-scale:hover {
+    transform: none;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for high DPI displays */
+}
+
