@@ -259,31 +259,79 @@ export default function PackageDetailClient() {
                             <h4 className="text-xl text-neutral mb-2 header-brand-secondary">{day.title}</h4>
                             <p className="text-neutral/70 mb-4 leading-relaxed">{day.description}</p>
                             
-                            {/* Activities */}
-                            <div className="mb-4">
-                              <h5 className="font-semibold text-neutral mb-2">Activities:</h5>
-                              <div className="flex flex-wrap gap-2">
-                                {day.activities.map((activity, actIndex) => (
-                                  <span 
-                                    key={actIndex}
-                                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
-                                  >
-                                    {activity}
-                                  </span>
-                                ))}
+                            {/* Activities or Schedule */}
+                            {day.activities ? (
+                              // Traditional activities format
+                              <div className="mb-4">
+                                <h5 className="font-semibold text-neutral mb-2">Activities:</h5>
+                                <div className="flex flex-wrap gap-2">
+                                  {day.activities.map((activity, actIndex) => (
+                                    <span 
+                                      key={actIndex}
+                                      className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                                    >
+                                      {activity}
+                                    </span>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
+                            ) : day.schedule ? (
+                              // New schedule format
+                              <div className="mb-4">
+                                <h5 className="font-semibold text-neutral mb-4">Daily Schedule:</h5>
+                                <div className="space-y-4">
+                                  {day.schedule.map((item, schedIndex) => (
+                                    <div key={schedIndex} className="border-l-4 border-primary/30 pl-4">
+                                      <div className="flex items-center justify-between mb-2">
+                                        <h6 className="font-semibold text-primary">{item.time}</h6>
+                                        <span className="text-xs text-neutral/60 bg-gray-100 px-2 py-1 rounded">
+                                          {item.period}
+                                        </span>
+                                      </div>
+                                      <h6 className="font-medium text-neutral mb-1">{item.activity}</h6>
+                                      <p className="text-sm text-neutral/70 mb-3">{item.description}</p>
+                                      <div className="flex flex-wrap gap-1">
+                                        {item.highlights.map((highlight, hlIndex) => (
+                                          <span 
+                                            key={hlIndex}
+                                            className="bg-primary/10 text-primary px-2 py-1 rounded text-xs"
+                                          >
+                                            {highlight}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : null}
 
                             {/* Details */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                              <div className="flex items-center space-x-2">
-                                <span className="font-medium text-neutral">Accommodation:</span>
-                                <span className="text-neutral/70">{day.accommodation}</span>
-                              </div>
-                              <div className="flex items-center space-x-2">
-                                <span className="font-medium text-neutral">Meals:</span>
-                                <span className="text-neutral/70">{day.meals}</span>
-                              </div>
+                              {day.accommodation && (
+                                <div className="flex items-center space-x-2">
+                                  <span className="font-medium text-neutral">Accommodation:</span>
+                                  <span className="text-neutral/70">{day.accommodation}</span>
+                                </div>
+                              )}
+                              {day.meals && (
+                                <div className="flex items-center space-x-2">
+                                  <span className="font-medium text-neutral">Meals:</span>
+                                  <span className="text-neutral/70">{day.meals}</span>
+                                </div>
+                              )}
+                              {day.duration && (
+                                <div className="flex items-center space-x-2">
+                                  <span className="font-medium text-neutral">Duration:</span>
+                                  <span className="text-neutral/70">{day.duration}</span>
+                                </div>
+                              )}
+                              {day.pickupTime && (
+                                <div className="flex items-center space-x-2">
+                                  <span className="font-medium text-neutral">Pickup Time:</span>
+                                  <span className="text-neutral/70">{day.pickupTime}</span>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>

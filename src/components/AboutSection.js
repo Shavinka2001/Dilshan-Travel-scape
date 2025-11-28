@@ -72,58 +72,110 @@ export default function AboutSection() {
 
           {/* Right Content - Visual */}
           <div className="relative mt-8 lg:mt-0">
-            <div className="bg-white rounded-lg sm:rounded-xl p-6 sm:p-8 text-center border border-gray-200 shadow-sm">
-              {/* Main Image Placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center text-6xl sm:text-7xl md:text-8xl mb-4 sm:mb-6">
-                🏝️
+            <div className="bg-white rounded-2xl p-6 sm:p-8 text-center shadow-lg border border-gray-100 backdrop-blur-sm">
+              {/* Main Image */}
+              <div className="relative aspect-square mb-6 sm:mb-8 overflow-hidden rounded-xl group">
+                <img 
+                  src="/images/about.jpeg" 
+                  alt="About Dilshan Travelscape - Professional Sri Lankan Travel Services" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="eager"
+                  onLoad={(e) => {
+                    console.log('About image loaded successfully');
+                    e.target.nextElementSibling.style.display = 'none';
+                  }}
+                  onError={(e) => {
+                    console.log('About image failed to load, trying fallback');
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
+                    // Try alternative image
+                    const fallbackImg = new Image();
+                    fallbackImg.onload = () => {
+                      e.target.src = '/images/sigiriya.jpg';
+                      e.target.style.display = 'block';
+                      e.target.nextElementSibling.style.display = 'none';
+                    };
+                    fallbackImg.src = '/images/sigiriya.jpg';
+                  }}
+                />
+                {/* Fallback when image fails to load */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                      <span className="text-3xl">📸</span>
+                    </div>
+                    <p className="text-neutral/70 text-sm font-medium">About Us</p>
+                    <p className="text-neutral/50 text-xs mt-1">Professional Travel Services</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-sm font-medium">About Dilshan Travelscape</p>
+                </div>
               </div>
 
               {/* Stats Cards */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg border border-gray-200">
-                  <div className="text-xl sm:text-2xl font-bold text-primary hero-title">15+</div>
-                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle">Years Experience</div>
+              <div className="grid grid-cols-2 gap-4 sm:gap-5 mb-6 sm:mb-8">
+                <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-4 sm:p-5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-md group">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary hero-title group-hover:scale-110 transition-transform duration-300">15+</div>
+                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle font-medium">Years Experience</div>
                 </div>
-                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg border border-gray-200">
-                  <div className="text-xl sm:text-2xl font-bold text-primary hero-title">500+</div>
-                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle">Happy Customers</div>
+                <div className="bg-gradient-to-br from-secondary/5 to-secondary/10 p-4 sm:p-5 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-md group">
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary hero-title group-hover:scale-110 transition-transform duration-300">500+</div>
+                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle font-medium">Happy Customers</div>
                 </div>
-                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg border border-gray-200">
-                  <div className="text-xl sm:text-2xl font-bold text-primary hero-title">50+</div>
-                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle">Tour Destinations</div>
+                <div className="bg-gradient-to-br from-green-500/5 to-green-500/10 p-4 sm:p-5 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:shadow-md group">
+                  <div className="text-2xl sm:text-3xl font-bold text-green-600 hero-title group-hover:scale-110 transition-transform duration-300">50+</div>
+                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle font-medium">Tour Destinations</div>
                 </div>
-                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg border border-gray-200">
-                  <div className="text-xl sm:text-2xl font-bold text-primary hero-title">4.9★</div>
-                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle">Average Rating</div>
+                <div className="bg-gradient-to-br from-amber-500/5 to-amber-500/10 p-4 sm:p-5 rounded-xl border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300 hover:shadow-md group">
+                  <div className="text-2xl sm:text-3xl font-bold text-amber-600 hero-title group-hover:scale-110 transition-transform duration-300">4.9★</div>
+                  <div className="text-xs sm:text-sm text-neutral/70 hero-subtitle font-medium">Average Rating</div>
                 </div>
               </div>
 
-              <p className="text-neutral/70 text-xs sm:text-sm hero-subtitle">
-                Trusted by travelers from around the world
-              </p>
+              <div className="flex items-center justify-center space-x-2 text-neutral/60">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <p className="text-xs sm:text-sm hero-subtitle font-medium">
+                  Trusted by travelers from around the world
+                </p>
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+              </div>
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-3 -left-3 sm:-top-6 sm:-left-6 bg-primary/10 text-primary p-3 sm:p-4 rounded-lg sm:rounded-xl shadow-sm border border-primary/20">
-              <div className="text-base sm:text-lg font-bold">🏆</div>
-              <div className="text-xs hero-subtitle">Award Winner</div>
+            <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 bg-gradient-to-br from-amber-500 to-amber-600 text-white p-4 sm:p-5 rounded-2xl shadow-lg border border-amber-400/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+              <div className="text-lg sm:text-xl font-bold mb-1">🏆</div>
+              <div className="text-xs font-semibold">Award Winner</div>
             </div>
 
-            <div className="absolute -bottom-3 -right-3 sm:-bottom-6 sm:-right-6 bg-white text-primary p-3 sm:p-4 rounded-lg sm:rounded-xl shadow-sm border border-gray-200">
-              <div className="text-base sm:text-lg font-bold">💯</div>
-              <div className="text-xs hero-subtitle">Quality Service</div>
+            <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-gradient-to-br from-green-500 to-green-600 text-white p-4 sm:p-5 rounded-2xl shadow-lg border border-green-400/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+              <div className="text-lg sm:text-xl font-bold mb-1">✨</div>
+              <div className="text-xs font-semibold">Quality Service</div>
             </div>
           </div>
         </div>
 
         {/* Mission Statement */}
         <div className="mt-12 sm:mt-16 md:mt-20 text-center">
-          <div className="max-w-4xl mx-2 sm:mx-auto bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg sm:rounded-xl p-6 sm:p-8 border border-primary/10">
-            <h3 className="text-xl sm:text-2xl font-light text-neutral mb-4 sm:mb-6 hero-title">Our <span className="text-primary font-semibold">Mission</span></h3>
-            <p className="text-sm sm:text-lg text-neutral/70 leading-relaxed hero-subtitle">
-              To provide exceptional travel experiences that create lasting memories while 
-              promoting sustainable tourism and supporting local communities.
-            </p>
+          <div className="max-w-4xl mx-2 sm:mx-auto bg-gradient-to-br from-primary/5 via-white to-secondary/5 rounded-2xl p-8 sm:p-10 border border-primary/10 shadow-lg backdrop-blur-sm relative overflow-hidden">
+            {/* Decorative background pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-4 left-4 w-20 h-20 bg-primary rounded-full"></div>
+              <div className="absolute bottom-4 right-4 w-32 h-32 bg-secondary rounded-full"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-primary/20 rounded-full"></div>
+            </div>
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-light text-neutral mb-6 hero-title">Our <span className="text-primary font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Mission</span></h3>
+              <p className="text-base sm:text-xl text-neutral/70 leading-relaxed hero-subtitle max-w-3xl mx-auto">
+                To provide exceptional travel experiences that create lasting memories while 
+                promoting sustainable tourism and supporting local communities.
+              </p>
+            </div>
           </div>
         </div>
       </div>
