@@ -95,7 +95,8 @@ export default function HeroSection() {
           playsInline
           webkit-playsinline="true"
           x-webkit-airplay="allow"
-          preload="auto"
+          preload="metadata"
+          poster="/images/sigiriya.jpg"
           disablePictureInPicture
           disableRemotePlayback
           controlsList="nodownload nofullscreen noremoteplayback"
@@ -107,7 +108,17 @@ export default function HeroSection() {
             console.log('Video started playing');
             const loadingDiv = document.getElementById('video-loading');
             if (loadingDiv) {
-              loadingDiv.style.display = 'none';
+              loadingDiv.style.opacity = '0';
+              setTimeout(() => {
+                loadingDiv.style.display = 'none';
+              }, 300);
+            }
+          }}
+          onLoadedMetadata={() => {
+            console.log('Video metadata loaded, poster ready');
+            const loadingDiv = document.getElementById('video-loading');
+            if (loadingDiv) {
+              loadingDiv.style.opacity = '0.3';
             }
           }}
           style={{
@@ -123,7 +134,11 @@ export default function HeroSection() {
         </video>
         
         {/* Video Loading Indicator */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-neutral/10 to-secondary/20" id="video-loading"></div>
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-neutral/10 to-secondary/20 transition-opacity duration-300" 
+          id="video-loading"
+          style={{ opacity: 1 }}
+        ></div>
         
         {/* Professional Video Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
