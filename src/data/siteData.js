@@ -242,23 +242,59 @@ export const testimonials = [
     name: "Sarah Johnson",
     country: "Australia",
     rating: 5,
-    comment: "Excellent service! The driver was professional and the vehicle was spotless. Highly recommended!",
-    image: "/images/testimonial1.jpg"
+    comment: "Absolutely incredible experience! Dilshan Travelscape exceeded all our expectations. Our driver was not only professional but also shared fascinating stories about Sri Lankan culture. The vehicle was immaculate and air-conditioned, which was perfect for the tropical weather. We felt safe throughout our journey and the attention to detail was remarkable. Would definitely book again!",
+    image: "/images/clients/sarah-johnson.svg",
+    tour: "Sri Lanka Highlights - 6 Days",
+    date: "March 2024"
   },
   {
     id: 2,
     name: "Marco Silva",
     country: "Italy",
     rating: 5,
-    comment: "Amazing tour experience. Our guide was knowledgeable and showed us hidden gems of Sri Lanka.",
-    image: "/images/testimonial2.jpg"
+    comment: "What an amazing adventure! Our guide was incredibly knowledgeable about local history and took us to some breathtaking hidden gems that aren't in typical tourist guides. The Sigiriya climb was challenging but so worth it, and the sunset views from Ella were unforgettable. Dilshan Travelscape really knows how to create magical moments. Grazie mille!",
+    image: "/images/clients/marco-silva.svg",
+    tour: "Southern Coast Explorer",
+    date: "February 2024"
   },
   {
     id: 3,
     name: "Emily Chen",
     country: "Singapore",
     rating: 5,
-    comment: "Perfect for families! Safe, comfortable, and the kids loved every moment of the tour.",
-    image: "/images/testimonial3.jpg"
+    comment: "Perfect family vacation! Traveling with two young children can be stressful, but Dilshan Travelscape made everything so smooth and enjoyable. The driver was patient with our many stops, the vehicle had child-friendly features, and our guide was fantastic at engaging the kids with fun facts about elephants and wildlife. The Yala safari was the highlight - we saw leopards! Our children are still talking about this trip months later.",
+    image: "/images/clients/emily-chen.svg",
+    tour: "Sri Lanka Highlights - 6 Days",
+    date: "January 2024"
+  },
+  {
+    id: 4,
+    name: "James Williams",
+    country: "United Kingdom",
+    rating: 5,
+    comment: "Exceptional service from start to finish! The online booking was straightforward, communication was excellent, and the actual tour exceeded our expectations. Our driver arrived punctually every morning, the vehicle was always clean and comfortable, and the itinerary was perfectly paced. The tea plantation visit in Nuwara Eliya was educational and the fresh mountain air was refreshing. Brilliant value for money!",
+    image: "/images/clients/james-williams.svg",
+    tour: "Kandy Cultural Tour",
+    date: "April 2024"
+  },
+  {
+    id: 5,
+    name: "Priya Patel",
+    country: "India",
+    rating: 5,
+    comment: "Incredible hospitality and authentic cultural experience! As someone of Sri Lankan heritage, I was looking for a tour that would connect me with my roots. Dilshan Travelscape delivered beautifully - from the Temple of the Tooth visit to the traditional dance performance in Kandy. Our guide shared wonderful stories about local traditions and even helped us find my grandfather's childhood village. This was more than a tour; it was a journey of discovery!",
+    image: "/images/clients/priya-patel.svg",
+    tour: "Kandy Cultural Tour",
+    date: "December 2023"
+  },
+  {
+    id: 6,
+    name: "David Thompson",
+    country: "Canada",
+    rating: 5,
+    comment: "Outstanding adventure for photographers! I'm a professional photographer and needed someone who understood the best lighting conditions and unique angles. Dilshan Travelscape went above and beyond - early morning departures for golden hour shots, patient waiting while I captured the perfect frame, and insider knowledge of the most photogenic spots. The Nine Arch Bridge photos turned out spectacular! Their expertise made all the difference.",
+    image: "/images/clients/david-thompson.svg",
+    tour: "Sri Lanka Highlights - 6 Days",
+    date: "November 2023"
   }
 ];

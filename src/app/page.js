@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
+import DestinationsHighlight from '../components/DestinationsHighlight';
 import ServicesSection from '../components/ServicesSection';
 import PackagesSection from '../components/PackagesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <PackagesSection />
+      <DestinationsHighlight />
       <TestimonialsSection />
       <Footer />
     </div>
