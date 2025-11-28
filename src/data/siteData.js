@@ -543,43 +543,67 @@ export const packages = [
   {
     id: 5,
     title: "Cultural & Scenic Adventure – Day 2",
-    subtitle: "Ancient Temples, Historic Cities & Mountain Landscapes – Kandy to Sigiriya",
-    description: "Immerse yourself in Sri Lanka's rich cultural heritage and stunning mountain scenery. From Kandy's sacred temples to Sigiriya's ancient rock fortress and scenic hill country landscapes.",
-    longDescription: "Embark on a captivating 2-day cultural and scenic journey through Sri Lanka's most iconic heritage sites. Experience the spiritual heart of Kandy with its sacred Temple of the Tooth, explore the magnificent Sigiriya Rock Fortress, and enjoy breathtaking mountain landscapes with traditional villages and spice gardens.",
+    subtitle: "Hill Country Trains, Ancient Temples & Rock Fortresses – Ella to Sigiriya",
+    description: "Experience Sri Lanka's ultimate cultural and scenic adventure combining hill country train rides, mountain hikes, tea estates, ancient temples, and UNESCO World Heritage sites. From Ella's mountain beauty to Sigiriya's ancient wonders.",
+    longDescription: "Embark on an unforgettable 2-day cultural and scenic journey starting with Ella's breathtaking landscapes, world-famous train rides, Little Adam's Peak hiking, and tea plantation experiences, followed by ancient temple explorations, elephant encounters, and culminating with the magnificent Sigiriya Rock Fortress climb.",
     duration: "2 days / 1 night",
-    price: "$150 per person",
-    priceFrom: 150,
+    price: "1 person: $250 | 2 persons: $350",
+    priceFrom: 250,
     groupSize: "2-8 people",
     difficulty: "Easy to Moderate",
-    season: "Year-round",
+    season: "Year-round (best March - September)",
     // SEO Optimization
     seo: {
-      metaTitle: "2-Day Cultural & Scenic Sri Lanka Tour | Kandy, Sigiriya & Hill Country",
-      metaDescription: "Explore Sri Lanka's cultural treasures in 2 days: Temple of the Tooth Kandy, Sigiriya Rock Fortress, spice gardens & scenic mountain landscapes. Perfect cultural adventure package!",
-      keywords: ["Cultural Sri Lanka tour", "Kandy Temple of Tooth", "Sigiriya Rock Fortress", "2 day cultural tour", "Sri Lanka heritage sites", "Buddhist temples Sri Lanka", "hill country scenery", "spice garden tour", "traditional villages Sri Lanka", "ancient kingdoms tour"],
+      metaTitle: "2-Day Ella Train & Sigiriya Cultural Tour | Hill Country to Ancient Kingdoms Sri Lanka",
+      metaDescription: "Epic 2-day Sri Lanka adventure: Ella scenic train ride, Little Adam's Peak hike, Nuwara Eliya tea estates, Temple of Tooth Kandy, Pinnawala elephants & Sigiriya Rock Fortress. Complete cultural experience!",
+      keywords: ["Ella train ride Sri Lanka", "Nanu Oya to Ella train", "Little Adam's Peak hike", "Nuwara Eliya post office", "Ceylon tea factory tour", "Ambuluwawa tower", "Temple of Tooth Kandy", "Pinnawala elephant orphanage", "Sigiriya Rock Fortress", "Pidurangala Rock", "Dambulla cave temple", "2 day cultural tour", "hill country train journey", "ancient kingdoms Sri Lanka"],
       canonicalUrl: "/tours/5",
-      ogTitle: "Ultimate Cultural & Scenic Sri Lanka Adventure | Temples & Ancient Fortresses",
-      ogDescription: "Discover Sri Lanka's cultural heart in 2 days! Sacred temples, ancient rock fortresses, mountain scenery & traditional villages. Complete heritage experience!",
-      ogImage: "/images/sigiriya.jpg",
-      twitterTitle: "2-Day Cultural Sri Lanka Tour | Kandy + Sigiriya",
-      twitterDescription: "Temple of the Tooth + Sigiriya Rock + Hill Country = Perfect cultural adventure in Sri Lanka!",
+      ogTitle: "Ultimate Ella Train & Sigiriya Adventure | 2-Day Cultural Sri Lanka Tour",
+      ogDescription: "Experience the best of Sri Lanka in 2 days! Scenic train rides, mountain hikes, tea estates, ancient temples & rock fortresses. From hill country beauty to ancient kingdoms.",
+      ogImage: "/images/ella.jpg",
+      twitterTitle: "2-Day Ella & Sigiriya Cultural Tour | Train + Temples",
+      twitterDescription: "Scenic train ride + Little Adam's Peak + Sigiriya Rock + Temple of Tooth = Ultimate Sri Lanka cultural adventure!",
       structuredData: {
         "@type": "TouristTrip",
-        "name": "Cultural & Scenic Adventure Tour",
-        "description": "A comprehensive 2-day cultural tour exploring Sri Lanka's most significant Buddhist temples, ancient rock fortresses, and scenic mountain landscapes.",
-        "touristType": ["Cultural Tourist", "Heritage Tourist", "Nature Tourist", "Photography Tourist"],
+        "name": "Cultural & Scenic Adventure Day Tour",
+        "description": "A comprehensive 2-day tour combining Sri Lanka's most scenic hill country attractions with ancient cultural heritage sites, featuring train rides, mountain hikes, tea estates, and UNESCO World Heritage temples.",
+        "touristType": ["Cultural Tourist", "Heritage Tourist", "Nature Tourist", "Adventure Tourist", "Photography Tourist"],
         "duration": "P2D",
         "timeOfYear": "Year-round",
         "offers": {
           "@type": "Offer",
-          "price": "150",
+          "price": "250",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
         "includesAttraction": [
           {
             "@type": "TouristAttraction",
+            "name": "Nanu Oya to Ella Train"
+          },
+          {
+            "@type": "TouristAttraction",
+            "name": "Little Adam's Peak"
+          },
+          {
+            "@type": "TouristAttraction",
+            "name": "Nuwara Eliya Post Office"
+          },
+          {
+            "@type": "TouristAttraction",
+            "name": "Ceylon Tea Factory"
+          },
+          {
+            "@type": "TouristAttraction",
+            "name": "Ambuluwawa Tower"
+          },
+          {
+            "@type": "TouristAttraction",
             "name": "Temple of the Tooth Kandy"
+          },
+          {
+            "@type": "TouristAttraction",
+            "name": "Pinnawala Elephant Orphanage"
           },
           {
             "@type": "TouristAttraction",
@@ -587,129 +611,176 @@ export const packages = [
           },
           {
             "@type": "TouristAttraction",
+            "name": "Pidurangala Rock"
+          },
+          {
+            "@type": "TouristAttraction",
             "name": "Dambulla Cave Temple"
-          },
-          {
-            "@type": "TouristAttraction",
-            "name": "Spice Garden Matale"
-          },
-          {
-            "@type": "TouristAttraction",
-            "name": "Royal Botanical Gardens"
           }
         ]
       }
     },
     slug: "cultural-scenic-adventure-tour",
-    image: "/images/sigiriya.jpg",
+    image: "/images/ella.jpg",
     gallery: [
+      "/images/ella.jpg",
       "/images/sigiriya.jpg",
-      "/images/kandy-temple.jpg",
-      "/images/dambulla.jpg",
-      "/images/botanical-gardens.jpg"
+      "/images/nuwaraeliya.jpg",
+      "/images/kandy-temple.jpg"
     ],
-    highlights: ["Temple of the Tooth Kandy", "Sigiriya Rock Fortress", "Dambulla Cave Temple", "Royal Botanical Gardens", "Spice Garden Experience", "Traditional Dance Show", "Mountain Scenery", "Cultural Insights"],
+    highlights: ["Scenic Train Ride (Nanu Oya-Ella)", "Little Adam's Peak Hike", "Nine Arch Bridge", "Nuwara Eliya Colonial Architecture", "Ceylon Tea Factory Experience", "Ambuluwawa Multi-Religious Centre", "Temple of the Tooth Kandy", "Pinnawala Elephant Orphanage", "Sigiriya Rock Fortress", "Pidurangala Rock Sunset", "Dambulla Cave Temple"],
     inclusions: [
       "Air-conditioned transportation with professional driver",
-      "1 night accommodation with breakfast",
-      "Professional English-speaking cultural guide",
+      "1 night accommodation in Kandy/Pinnawala area",
+      "Scenic train tickets (Nanu Oya to Ella)",
+      "Professional English-speaking cultural guide throughout",
       "Temple of the Tooth guided tour",
+      "Pinnawala Elephant Orphanage entrance",
       "Sigiriya Rock Fortress entrance and guide",
+      "Pidurangala Rock climbing guide",
       "Dambulla Cave Temple visit",
-      "Royal Botanical Gardens entry",
-      "Traditional cultural dance show",
-      "Spice garden tour and demonstration",
+      "Ceylon tea factory tour and tasting",
+      "Ambuluwawa tower entrance",
       "Express way tolls and parking fees",
-      "Complimentary bottled water throughout",
+      "Complimentary bottled water throughout tour",
       "Passenger travel insurance coverage",
       "Hotel pickup and drop-off service"
     ],
     exclusions: [
-      "Additional entrance fees not mentioned",
+      "Additional entrance fees not mentioned in inclusions",
       "Personal expenses and shopping",
       "Alcoholic beverages and premium drinks",
-      "Lunch and dinner (can be arranged upon request)",
+      "Meals (breakfast, lunch, dinner can be arranged)",
       "Tips and gratuities for guide and driver",
-      "Optional activities and excursions",
-      "Additional accommodation beyond specified",
-      "Travel insurance beyond basic coverage"
+      "Optional activities and additional excursions",
+      "Additional accommodation beyond specified night",
+      "Travel insurance beyond basic coverage included"
     ],
     itinerary: [
       {
         day: 1,
-        title: "Kandy Cultural Immersion",
-        description: "Discover the spiritual and cultural heart of Sri Lanka in the historic city of Kandy, exploring sacred temples, royal gardens, and experiencing traditional arts.",
+        title: "Hill Country Train Journey & Cultural Exploration",
+        description: "Begin your adventure in the beautiful hill country of Ella, experience the world's most scenic train journey, explore colonial Nuwara Eliya, visit tea estates, and journey to the cultural heart of Kandy with its sacred temples.",
         schedule: [
           {
+            time: "Early Morning",
+            period: "06:00 - 06:30",
+            activity: "Departure from Ella",
+            description: "Early morning departure from your accommodation in Ella to begin this incredible 2-day cultural and scenic adventure through Sri Lanka's most beautiful landscapes and heritage sites.",
+            highlights: ["Early morning pickup", "Scenic mountain views", "Fresh mountain air", "Photography opportunities", "Comfortable transportation", "Professional guide introduction"]
+          },
+          {
             time: "Morning",
-            period: "08:00 - 10:30",
-            activity: "Temple of the Tooth Relic",
-            description: "Begin your cultural journey at Sri Lanka's most sacred Buddhist temple, housing the tooth relic of Lord Buddha. Experience morning prayers and learn about Buddhist traditions and Sri Lankan religious practices.",
-            highlights: ["Sacred tooth relic viewing", "Buddhist prayer ceremonies", "Temple architecture", "Religious significance", "Photography opportunities", "Spiritual experience"]
+            period: "06:30 - 08:00",
+            activity: "Scenic Train Ride (Nanu Oya to Ella)",
+            description: "Experience one of the world's most beautiful train journeys through emerald tea plantations, misty mountains, and cascading waterfalls. This iconic route offers breathtaking panoramic views of Sri Lanka's hill country.",
+            highlights: ["World's most scenic train ride", "Tea plantation vistas", "Mountain panoramas", "Waterfall sightings", "Colonial railway heritage", "Photography paradise"]
+          },
+          {
+            time: "Morning",
+            period: "08:00 - 09:00",
+            activity: "Traditional Sri Lankan Breakfast",
+            description: "Enjoy a hearty traditional Sri Lankan breakfast featuring hoppers, string hoppers, coconut sambol, and Ceylon tea, providing the perfect fuel for your mountain hiking adventure.",
+            highlights: ["Authentic Sri Lankan breakfast", "Fresh local ingredients", "Ceylon tea tasting", "Cultural dining experience", "Energy for hiking", "Local hospitality"]
+          },
+          {
+            time: "Morning",
+            period: "09:00 - 11:30",
+            activity: "Little Adam's Peak Hiking",
+            description: "Conquer Little Adam's Peak, a relatively easy hike offering spectacular 360-degree panoramic views of the surrounding tea plantations, valleys, and mountain ranges. Perfect for all fitness levels with incredibly rewarding summit views.",
+            highlights: ["360-degree mountain panoramas", "Tea plantation bird's eye views", "Easy hiking trail", "Summit achievement", "Breathtaking photography", "Fresh mountain air"]
           },
           {
             time: "Late Morning",
-            period: "10:30 - 12:30",
-            activity: "Royal Botanical Gardens Peradeniya",
-            description: "Explore one of the world's finest tropical botanical gardens, featuring over 4,000 species of plants, giant bamboo groves, orchid houses, and the famous avenue of royal palms.",
-            highlights: ["Tropical plant species", "Orchid collection", "Giant bamboo grove", "Royal palm avenue", "Spice trees", "Scenic walkways"]
+            period: "11:30 - 14:00",
+            activity: "Nuwara Eliya & Historic Post Office",
+            description: "Explore Nuwara Eliya, known as 'Little England,' with its colonial architecture, perfectly manicured gardens, and the famous historic post office. Experience the cool climate and British colonial charm of this hill station.",
+            highlights: ["Colonial British architecture", "Historic post office visit", "Little England atmosphere", "Cool mountain climate", "Victorian-era buildings", "Scenic town exploration"]
           },
           {
             time: "Afternoon",
-            period: "13:00 - 15:00",
-            activity: "Kandy City & Lake Tour",
-            description: "Discover Kandy's colonial architecture, bustling markets, and the scenic Kandy Lake. Visit local craftsmen and explore the city's rich history as the last kingdom of Sri Lanka.",
-            highlights: ["Kandy Lake walkway", "Colonial architecture", "Local markets", "Traditional crafts", "City viewpoints", "Historical insights"]
+            period: "14:00 - 15:00",
+            activity: "Ceylon Tea Factory Experience",
+            description: "Discover the secrets of world-renowned Ceylon tea at a traditional tea factory. Learn about the complete tea-making process from leaf to cup, enjoy fresh tea tastings, and purchase premium teas directly from the source.",
+            highlights: ["Tea production process tour", "Factory machinery demonstrations", "Fresh Ceylon tea tasting", "Premium tea shopping", "Educational experience", "Cultural insights"]
+          },
+          {
+            time: "Afternoon",
+            period: "15:00 - 16:00",
+            activity: "Ambuluwawa Multi-Religious Centre",
+            description: "Visit the unique Ambuluwawa Tower and Multi-Religious Centre, offering panoramic views of the surrounding mountains and representing the harmony of different religions in Sri Lanka.",
+            highlights: ["Multi-religious harmony", "Panoramic mountain views", "Unique tower architecture", "Spiritual significance", "Photography opportunities", "Cultural tolerance message"]
+          },
+          {
+            time: "Evening",
+            period: "16:00 - 18:00",
+            activity: "Temple of the Tooth Kandy",
+            description: "Visit Sri Lanka's most sacred Buddhist temple in Kandy, housing the tooth relic of Lord Buddha. Experience evening prayers, learn about Buddhist traditions, and explore the beautiful temple complex.",
+            highlights: ["Sacred tooth relic viewing", "Evening prayer ceremonies", "Buddhist temple architecture", "Religious significance", "Cultural immersion", "Spiritual experience"]
           },
           {
             time: "Evening",
             period: "18:00 - 20:00",
-            activity: "Traditional Cultural Dance Show",
-            description: "Experience the vibrant traditional arts of Sri Lanka with an authentic cultural dance performance featuring Kandyan dancers, fire dancers, and traditional music.",
-            highlights: ["Kandyan traditional dances", "Fire walking performance", "Traditional costumes", "Live drumming", "Cultural storytelling", "Photography allowed"]
+            activity: "Journey to Pinnawala",
+            description: "Scenic evening drive to Pinnawala area for overnight accommodation, passing through beautiful countryside and traditional villages.",
+            highlights: ["Scenic countryside drive", "Traditional village views", "Evening landscape photography", "Comfortable accommodation", "Rural Sri Lanka experience", "Peaceful overnight stay"]
           }
         ],
-        duration: "Full day with overnight in Kandy area",
-        pickupTime: "08:00 AM (varies by location)",
-        pickupDetails: "Pickup from your hotel in Kandy or surrounding areas. We'll confirm exact timing upon booking."
+        duration: "Full day with overnight in Pinnawala area",
+        pickupTime: "06:00 AM from Ella accommodation",
+        pickupDetails: "Early morning pickup from your hotel in Ella. We'll confirm exact timing based on train schedules and your accommodation location."
       },
       {
         day: 2,
-        title: "Ancient Kingdoms & Scenic Landscapes",
-        description: "Journey through Sri Lanka's ancient heritage visiting the magnificent Sigiriya Rock Fortress and Dambulla Cave Temple, with scenic mountain drives and spice garden experiences.",
+        title: "Ancient Kingdoms & UNESCO World Heritage Sites",
+        description: "Experience Sri Lanka's ancient heritage with elephant encounters, magnificent rock fortresses, and sacred cave temples. Journey through 2,000 years of history from Pinnawala to the ancient kingdoms of Sigiriya and Dambulla.",
         schedule: [
           {
             time: "Early Morning",
-            period: "06:30 - 10:00",
-            activity: "Sigiriya Rock Fortress Climb",
-            description: "Climb the iconic Sigiriya Rock Fortress, a UNESCO World Heritage site and ancient royal citadel. Marvel at the famous frescoes, mirror wall, and panoramic views from the summit.",
-            highlights: ["Ancient rock fortress", "Famous Sigiriya frescoes", "Mirror wall inscriptions", "Royal palace ruins", "Panoramic summit views", "UNESCO World Heritage site"]
+            period: "06:00 - 08:30",
+            activity: "Departure & Journey to Sigiriya",
+            description: "Early morning departure from your accommodation with a scenic drive through changing landscapes from the hill country to the cultural triangle, arriving at the magnificent Sigiriya Rock Fortress for optimal climbing conditions.",
+            highlights: ["Early departure for best weather", "Landscape transition views", "Comfortable air-conditioned transport", "Professional guide commentary", "Photography opportunities", "Optimal climbing timing"]
           },
           {
             time: "Morning",
-            period: "10:30 - 12:00",
-            activity: "Dambulla Cave Temple",
-            description: "Explore the magnificent Dambulla Cave Temple complex, featuring five caves with over 150 Buddha statues and ancient paintings dating back 2,000 years.",
-            highlights: ["Ancient cave paintings", "150+ Buddha statues", "Religious significance", "Rock temple architecture", "Historical artifacts", "Spiritual atmosphere"]
+            period: "08:30 - 12:00",
+            activity: "Sigiriya Rock Fortress Climb",
+            description: "Climb the iconic Sigiriya Rock Fortress, a UNESCO World Heritage site and ancient royal citadel rising 200 meters above the jungle. Marvel at the world-famous frescoes, ancient mirror wall inscriptions, and breathtaking panoramic views from the summit palace ruins.",
+            highlights: ["UNESCO World Heritage site", "Ancient royal citadel", "Famous Sigiriya frescoes", "Mirror wall inscriptions", "Royal palace ruins", "Panoramic jungle views"]
           },
           {
             time: "Afternoon",
-            period: "13:00 - 14:30",
-            activity: "Matale Spice Garden Experience",
-            description: "Discover Sri Lanka's famous spices at a traditional spice garden. Learn about cultivation, processing, and medicinal uses of cinnamon, cardamom, pepper, and other aromatic spices.",
-            highlights: ["Spice cultivation tour", "Traditional processing methods", "Ayurvedic medicine insights", "Fresh spice tasting", "Spice shopping opportunity", "Cultural education"]
+            period: "12:00 - 14:00",
+            activity: "Traditional Sri Lankan Lunch",
+            description: "Enjoy a delicious traditional Sri Lankan lunch featuring rice and curry with multiple vegetable and meat dishes, providing authentic flavors and much-needed energy after the Sigiriya climb.",
+            highlights: ["Authentic rice and curry", "Multiple curry varieties", "Fresh local ingredients", "Cultural dining experience", "Rest and refreshment", "Traditional hospitality"]
+          },
+          {
+            time: "Afternoon",
+            period: "14:00 - 16:00",
+            activity: "Pidurangala Rock Climbing",
+            description: "Climb the less crowded but equally spectacular Pidurangala Rock, offering unique views of Sigiriya Rock Fortress and surrounding landscapes. This adventure provides perfect photography angles of the famous rock fortress.",
+            highlights: ["Unique Sigiriya views", "Less crowded experience", "Adventure rock climbing", "Photography paradise", "Jungle panoramas", "Alternative perspective"]
           },
           {
             time: "Late Afternoon",
-            period: "15:00 - 17:00",
-            activity: "Scenic Mountain Drive & Departure",
-            description: "Enjoy a scenic drive through Sri Lanka's beautiful hill country landscapes, traditional villages, and tea plantations before departure to your next destination.",
-            highlights: ["Mountain scenery", "Traditional villages", "Tea plantation views", "Landscape photography", "Cultural observations", "Safe return journey"]
+            period: "16:00 - 17:30",
+            activity: "Dambulla Cave Temple Complex",
+            description: "Explore the magnificent Dambulla Cave Temple complex, a UNESCO World Heritage site featuring five caves with over 150 Buddha statues and ancient paintings dating back 2,000 years. Experience the spiritual atmosphere of this sacred pilgrimage site.",
+            highlights: ["UNESCO World Heritage site", "2,000-year-old cave paintings", "150+ Buddha statues", "Religious pilgrimage site", "Ancient art treasures", "Spiritual atmosphere"]
+          },
+          {
+            time: "Evening",
+            period: "17:30 - 20:00",
+            activity: "Departure to Next Destination",
+            description: "Comfortable departure from the cultural triangle with drop-off at your hotel or onward transportation to your next destination. Safe journey with memories of an incredible 2-day cultural and scenic adventure through Sri Lanka's most beautiful and historically significant locations.",
+            highlights: ["Hotel drop-off service", "Onward destination transfer", "Safe comfortable transport", "Trip memories discussion", "Professional service", "Flexible departure arrangements"]
           }
         ],
         duration: "Full day departure",
-        pickupTime: "06:30 AM from accommodation",
-        pickupDetails: "Early morning pickup for optimal Sigiriya climbing conditions. Flexible drop-off arrangements available."
+        pickupTime: "06:00 AM from Pinnawala accommodation",
+        pickupDetails: "Early morning pickup for optimal Sigiriya climbing conditions and weather. Flexible drop-off arrangements to your next destination."
       }
     ]
   }
