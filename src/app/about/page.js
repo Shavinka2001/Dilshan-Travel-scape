@@ -143,40 +143,44 @@ export default function AboutPage() {
             <div className="relative">
               <div className="relative">
                 {/* Main Image with overlay */}
-                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl group">
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[4/5] overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl group bg-gradient-to-br from-slate-100 to-slate-200">
                   <img 
-                    src="/images/hiriketiya.jpg" 
+                    src="/images/about.jpeg" 
                     alt="Beautiful Hiriketiya Beach - Our Home Base in Sri Lanka" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 filter brightness-105 contrast-105 saturate-110"
                     loading="eager"
+                    style={{
+                      imageRendering: 'high-quality',
+                      WebkitImageSmoothing: 'high'
+                    }}
                     onError={(e) => {
                       e.target.src = '/images/sigiriya.jpg';
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <p className="text-sm font-medium opacity-90">Hiriketiya Beach</p>
-                    <p className="text-lg font-bold">Our Beautiful Home Base</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent sm:from-black/40 sm:via-transparent"></div>
+                  <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-white max-w-[calc(100%-2rem)]">
+                    <p className="text-xs sm:text-sm font-medium opacity-90 mb-1">Hiriketiya Beach</p>
+                    <p className="text-base sm:text-lg font-bold leading-tight">Our Beautiful Home Base</p>
                   </div>
                 </div>
 
                 {/* Floating Cards */}
-                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-slate-100">
+                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg border border-slate-100 backdrop-blur-sm bg-white/95 min-w-[100px] sm:min-w-[120px]">
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-medium text-slate-700">Active Tours</span>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse flex-shrink-0"></div>
+                    <span className="text-xs sm:text-sm font-medium text-slate-700 whitespace-nowrap">Active Tours</span>
                   </div>
-                  <div className="text-2xl font-bold text-slate-900 mt-1">Live</div>
+                  <div className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Live</div>
                 </div>
 
-                <div className="absolute -bottom-6 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-[#F5F7FA]">
+                <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-4 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg border border-[#F5F7FA] backdrop-blur-sm bg-white/95 min-w-[90px] sm:min-w-[110px]">
                   <div className="flex items-center space-x-2 mb-2">
-                    <svg className="w-4 h-4 text-[#FFC046]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFC046] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                     </svg>
-                    <span className="text-sm font-medium text-[#1E1E1E]/70">Rating</span>
+                    <span className="text-xs sm:text-sm font-medium text-[#1E1E1E]/70 whitespace-nowrap">Rating</span>
                   </div>
-                  <div className="text-xl font-bold text-[#1E1E1E]">4.8/5</div>
+                  <div className="text-lg sm:text-xl font-bold text-[#1E1E1E]">4.8/5</div>
                 </div>
               </div>
             </div>
