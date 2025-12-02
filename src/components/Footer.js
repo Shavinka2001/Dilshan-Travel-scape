@@ -78,13 +78,37 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/70 text-sm">
-            © 2024 Dilshan Travelscape. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-white/70 hover:text-secondary text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-white/70 hover:text-secondary text-sm transition-colors">Terms of Service</a>
+        <div className="border-t border-white/20 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+            <p className="text-white/70 text-sm">
+              © 2024 Dilshan Travelscape. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-white/70 hover:text-secondary text-sm transition-colors">Privacy Policy</a>
+              <a href="#" className="text-white/70 hover:text-secondary text-sm transition-colors">Terms of Service</a>
+            </div>
+          </div>
+          
+          {/* Developer Credit */}
+          <div className="border-t border-white/10 pt-4">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center space-x-2 text-white/40 text-xs">
+                <div className="w-4 h-4 bg-gradient-to-r from-[#1A73E8] to-[#6C63FF] rounded-md flex items-center justify-center">
+                  <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </div>
+                <span>Developed by</span>
+                <span className="text-[#FFC046] font-medium">LuminexIT</span>
+                <span className="text-white/20">•</span>
+                <a 
+                  href="tel:+94719769164" 
+                  className="text-[#FFC046] hover:text-[#FFC046]/80 transition-colors duration-200 font-medium"
+                >
+                  071 976 9164
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

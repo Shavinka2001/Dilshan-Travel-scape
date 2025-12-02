@@ -1,13 +1,13 @@
 export const siteConfig = {
   name: "Dilshan Travelscape",
   description: "Premium vehicle rentals and guided tours in Sri Lanka",
-  phone: "+94 77 123 4567",
+  phone: "+94 77 819 7348",
   email: "dilshantravelscape.com",
   address: "Welewaththa,Hiriketiya,Dickwella,Sri Lanka",
   social: {
     facebook: "https://facebook.com/dilshantravelscape",
     instagram: "https://instagram.com/dilshantravelscape",
-    whatsapp: "https://wa.me/94771234567"
+    whatsapp: "https://wa.me/94778197348"
   }
 };
 

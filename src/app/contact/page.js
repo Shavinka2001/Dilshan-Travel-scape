@@ -22,11 +22,67 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // Create form data for FormSubmit
+      const formDataToSend = new FormData();
+      
+      // Add form fields
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('service', formData.service || 'Not specified');
+      formDataToSend.append('message', formData.message);
+      
+      // Add additional metadata
+      formDataToSend.append('_subject', `New Contact Form Submission from ${formData.name}`);
+      formDataToSend.append('_template', 'table');
+      formDataToSend.append('_captcha', 'false');
+      
+      // Replace with your actual email address
+      const response = await fetch('https://formsubmit.co/dilshantravelscape.com', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleWhatsAppSubmit = () => {
+    const serviceText = formData.service ? `\n🎯 *Service Required:* ${formData.service.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}` : '';
+    const message = `🌴 *Hi Dilshan Travelscape!*\n\n👤 *Name:* ${formData.name}\n📧 *Email:* ${formData.email}\n📱 *Phone:* ${formData.phone}${serviceText}\n\n💬 *Message:*\n${formData.message}\n\n---\n🗓️ *Sent from Website Contact Form*`;
+    
+    const whatsappURL = `https://wa.me/${siteConfig.phone.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  };
+
+  const handleVoiceCall = () => {
+    window.location.href = `tel:${siteConfig.phone}`;
   };
 
   return (
@@ -215,13 +271,94 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full bg-primary text-white py-3 sm:py-4 rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary"
-                  >
-                    <FaPaperPlane />
-                    <span>Send Message</span>
-                  </button>
+                  {/* Success/Error Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-4">
+                      <div className="flex items-center space-x-2">
+                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="font-medium">Message sent successfully!</span>
+                      </div>
+                      <p className="text-sm mt-1">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+                      <div className="flex items-center space-x-2">
+                        <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16c-.77.833.192 2.5 1.732 2.5z" />
+                        </svg>
+                        <span className="font-medium">Failed to send message</span>
+                      </div>
+                      <p className="text-sm mt-1">Please try again or contact us directly via phone or WhatsApp.</p>
+                    </div>
+                  )}
+
+                  {/* Submit Options */}
+                  <div className="space-y-3">
+                    {/* Email Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-primary text-white py-3 sm:py-4 rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <FaPaperPlane />
+                          <span>Send via Email</span>
+                        </>
+                      )}
+                    </button>
+
+                    {/* Divider */}
+                    <div className="relative">
+                      <div className="absolute inset-0 flex items-center">
+                        <div className="w-full border-t border-gray-300"></div>
+                      </div>
+                      <div className="relative flex justify-center text-sm">
+                        <span className="px-3 bg-white text-gray-500">Or send instantly via</span>
+                      </div>
+                    </div>
+
+                    {/* Quick Contact Buttons */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        onClick={handleWhatsAppSubmit}
+                        disabled={!formData.name || !formData.message}
+                        className="bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary"
+                      >
+                        <FaWhatsapp />
+                        <span>WhatsApp</span>
+                      </button>
+                      
+                      <button
+                        type="button"
+                        onClick={handleVoiceCall}
+                        className="bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary"
+                      >
+                        <FaPhone />
+                        <span>Call Now</span>
+                      </button>
+                    </div>
+
+                    {/* Help Text */}
+                    <div className="text-center">
+                      <p className="text-xs text-gray-500 mt-2">
+                        💡 <strong>WhatsApp:</strong> Requires name & message • <strong>Call:</strong> Direct voice connection
+                      </p>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
