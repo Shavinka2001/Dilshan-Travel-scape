@@ -82,24 +82,32 @@ export default function ContactPage() {
     
     try {
       const serviceText = formData.service ? `\n🎯 *Service Required:* ${formData.service.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}` : '';
-      const message = `🌴 *Hi Dilshan Travelscape!*\n\n👤 *Name:* ${formData.name}\n📧 *Email:* ${formData.email}\n📱 *Phone:* ${formData.phone}${serviceText}\n\n💬 *Message:*\n${formData.message}\n\n---\n🗓️ *Sent from Website Contact Form*`;
+      const message = `🌴 *Hi Dilshan Travelscape!*\n\n👤 *Name:* ${formData.name}\n📧 *Email:* ${formData.email || 'Not provided'}\n📱 *Phone:* ${formData.phone}${serviceText}\n\n💬 *Message:*\n${formData.message}\n\n---\n🗓️ *Sent from Website Contact Form*`;
       
-      // Use the WhatsApp URL with message
-      const whatsappURL = `${siteConfig.social.whatsapp}?text=${encodeURIComponent(message)}`;
+      // Construct WhatsApp URL properly
+      const phoneNumber = siteConfig.phone ? siteConfig.phone.replace(/[^\d]/g, '') : '94778197348';
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       
       // Debug logging
-      console.log('Opening WhatsApp with URL:', whatsappURL);
+      console.log('Phone number:', phoneNumber);
+      console.log('WhatsApp URL:', whatsappURL);
+      console.log('Message:', message);
       
-      // Open WhatsApp in new tab
-      const newWindow = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
-      
-      if (!newWindow) {
-        // Fallback if popup is blocked
+      // Open WhatsApp with better browser compatibility
+      if (window.navigator.userAgent.includes('Mobile')) {
+        // Mobile device - use direct navigation
         window.location.href = whatsappURL;
+      } else {
+        // Desktop - try to open in new tab first
+        const newWindow = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+        if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+          // Popup blocked or failed - use direct navigation
+          window.location.href = whatsappURL;
+        }
       }
     } catch (error) {
       console.error('WhatsApp error:', error);
-      alert('Unable to open WhatsApp. Please try again or contact us directly.');
+      alert('Unable to open WhatsApp. Please try again or contact us directly at +94 77 819 7348.');
     }
   };
 
@@ -110,17 +118,18 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24">
+      <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Header */}
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <span className="text-secondary font-semibold uppercase text-xs sm:text-sm tracking-wider header-brand-secondary block mb-2 sm:mb-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 mt-4 sm:mt-0">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-bold uppercase text-sm sm:text-sm tracking-wider header-brand-secondary mb-4 sm:mb-4 shadow-sm">
+              <span className="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
               Contact Us
-            </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-neutral mb-3 sm:mb-6 hero-title px-3 sm:px-0 leading-tight">
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-neutral mb-4 sm:mb-6 hero-title px-3 sm:px-0 leading-tight">
               Get In <span className="text-primary font-semibold">Touch</span>
             </h1>
-            <p className="text-sm sm:text-base lg:text-lg text-neutral/70 max-w-2xl mx-auto hero-subtitle px-4 sm:px-0 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-neutral/70 max-w-2xl mx-auto hero-subtitle px-4 sm:px-0 leading-relaxed">
               Ready to plan your perfect Sri Lankan adventure? Contact us today and let's make your travel dreams come true.
             </p>
           </div>
@@ -207,15 +216,15 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="order-1 lg:order-2">
-              <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-light text-neutral mb-4 sm:mb-6 hero-title px-1 sm:px-0">
+              <div className="bg-white rounded-lg sm:rounded-xl p-5 sm:p-6 lg:p-8 border border-gray-200 shadow-sm">
+                <h3 className="text-xl sm:text-xl lg:text-2xl font-light text-neutral mb-6 sm:mb-6 hero-title px-1 sm:px-0">
                   Send us a <span className="text-primary font-semibold">Message</span>
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 lg:space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-4 lg:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4 lg:gap-6">
                     <div>
-                      <label className="block text-neutral font-medium mb-1.5 sm:mb-2 text-sm sm:text-base header-brand-secondary">
+                      <label className="block text-neutral font-semibold mb-2.5 sm:mb-2 text-base sm:text-base header-brand-secondary">
                         Full Name *
                       </label>
                       <input
@@ -224,13 +233,13 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-sm sm:text-base hero-subtitle touch-manipulation"
+                        className="w-full px-4 sm:px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-base sm:text-base hero-subtitle touch-manipulation bg-gray-50 focus:bg-white min-h-[56px] sm:min-h-[48px]"
                         placeholder="Your full name"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-neutral font-medium mb-1.5 sm:mb-2 text-sm sm:text-base header-brand-secondary">
+                      <label className="block text-neutral font-semibold mb-2.5 sm:mb-2 text-base sm:text-base header-brand-secondary">
                         Phone Number *
                       </label>
                       <input
@@ -239,14 +248,14 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-sm sm:text-base hero-subtitle touch-manipulation"
+                        className="w-full px-4 sm:px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-base sm:text-base hero-subtitle touch-manipulation bg-gray-50 focus:bg-white min-h-[56px] sm:min-h-[48px]"
                         placeholder="Your phone number"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-neutral font-medium mb-1.5 sm:mb-2 text-sm sm:text-base header-brand-secondary">
+                    <label className="block text-neutral font-semibold mb-2.5 sm:mb-2 text-base sm:text-base header-brand-secondary">
                       Email Address *
                     </label>
                     <input
@@ -255,20 +264,25 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-sm sm:text-base hero-subtitle touch-manipulation"
+                      className="w-full px-4 sm:px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-base sm:text-base hero-subtitle touch-manipulation bg-gray-50 focus:bg-white min-h-[56px] sm:min-h-[48px]"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-neutral font-medium mb-1.5 sm:mb-2 text-sm sm:text-base header-brand-secondary">
+                    <label className="block text-neutral font-semibold mb-2.5 sm:mb-2 text-base sm:text-base header-brand-secondary">
                       Service Required
                     </label>
                     <select
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 text-sm sm:text-base hero-subtitle touch-manipulation bg-white"
+                      className="w-full px-4 sm:px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-base sm:text-base hero-subtitle touch-manipulation bg-gray-50 focus:bg-white min-h-[56px] sm:min-h-[48px] appearance-none bg-no-repeat bg-right pr-12"
+                      style={{
+                        backgroundImage: "url('data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%226,9 12,15 18,9%22></polyline></svg>')",
+                        backgroundPosition: 'right 12px center',
+                        backgroundSize: '20px'
+                      }}
                     >
                       <option value="">Select a service</option>
                       <option value="vehicle-rental">Vehicle Rental</option>
@@ -279,7 +293,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-neutral font-medium mb-1.5 sm:mb-2 text-sm sm:text-base header-brand-secondary">
+                    <label className="block text-neutral font-semibold mb-2.5 sm:mb-2 text-base sm:text-base header-brand-secondary">
                       Message *
                     </label>
                     <textarea
@@ -287,8 +301,8 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows="4"
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-vertical text-sm sm:text-base hero-subtitle touch-manipulation min-h-[100px] sm:min-h-[120px]"
+                      rows="5"
+                      className="w-full px-4 sm:px-4 py-4 sm:py-3 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-vertical text-base sm:text-base hero-subtitle touch-manipulation min-h-[140px] sm:min-h-[120px] bg-gray-50 focus:bg-white leading-relaxed"
                       placeholder="Tell us about your travel plans, dates, group size, and any special requirements..."
                     ></textarea>
                   </div>
@@ -319,12 +333,12 @@ export default function ContactPage() {
                   )}
 
                   {/* Submit Options */}
-                  <div className="space-y-3 sm:space-y-4">
+                  <div className="space-y-4 sm:space-y-4 pt-2">
                     {/* Email Submit Button */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-primary text-white py-3 sm:py-4 rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary touch-manipulation min-h-[48px] active:scale-[0.98]"
+                      className="w-full bg-primary text-white py-4 sm:py-4 rounded-xl font-semibold hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2 text-base sm:text-base header-brand-primary touch-manipulation min-h-[56px] active:scale-[0.98] shadow-lg hover:shadow-xl"
                     >
                       {isSubmitting ? (
                         <>
@@ -353,14 +367,14 @@ export default function ContactPage() {
                     </div>
 
                     {/* Quick Contact Buttons */}
-                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-3">
                       <button
                         type="button"
                         onClick={handleWhatsAppSubmit}
                         disabled={!formData.name || !formData.message}
-                        className="bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary touch-manipulation min-h-[48px] active:scale-[0.98]"
+                        className="bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2 text-base sm:text-base header-brand-primary touch-manipulation min-h-[56px] active:scale-[0.98] shadow-lg hover:shadow-xl"
                       >
-                        <FaWhatsapp className="text-sm sm:text-base" />
+                        <FaWhatsapp className="text-base sm:text-base" />
                         <span className="hidden xs:inline sm:inline">WhatsApp</span>
                         <span className="inline xs:hidden sm:hidden">Chat</span>
                       </button>
@@ -368,9 +382,9 @@ export default function ContactPage() {
                       <button
                         type="button"
                         onClick={handleVoiceCall}
-                        className="bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 text-sm sm:text-base header-brand-primary touch-manipulation min-h-[48px] active:scale-[0.98]"
+                        className="bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 text-base sm:text-base header-brand-primary touch-manipulation min-h-[56px] active:scale-[0.98] shadow-lg hover:shadow-xl"
                       >
-                        <FaPhone className="text-sm sm:text-base" />
+                        <FaPhone className="text-base sm:text-base" />
                         <span className="hidden xs:inline sm:inline">Call Now</span>
                         <span className="inline xs:hidden sm:hidden">Call</span>
                       </button>
@@ -378,7 +392,7 @@ export default function ContactPage() {
 
                     {/* Help Text */}
                     <div className="text-center">
-                      <p className="text-xs text-gray-500 mt-2">
+                      <p className="text-sm text-gray-600 mt-3 px-2 leading-relaxed">
                         💡 <strong>WhatsApp:</strong> Requires name & message • <strong>Call:</strong> Direct voice connection
                       </p>
                     </div>
