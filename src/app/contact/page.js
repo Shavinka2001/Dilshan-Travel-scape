@@ -47,7 +47,7 @@ export default function ContactPage() {
       formDataToSend.append('_captcha', 'false');
       
       // Replace with your actual email address
-      const response = await fetch('https://formsubmit.co/dilshantravelscape.com', {
+      const response = await fetch('https://formsubmit.co/dilshantravelscape@gmail.com', {
         method: 'POST',
         body: formDataToSend,
       });
