@@ -14,8 +14,8 @@ export const siteConfig = {
 export const services = [
   {
     id: 1,
-    title: "Vehicle Rentals",
-    description: "Premium cars, vans, and buses for comfortable travel",
+    title: "Vehicle & Bike Rentals",
+    description: "Premium cars,bikes, vans, and buses for comfortable travel",
     icon: "🚗",
     features: ["Air-conditioned vehicles", "Professional drivers", "GPS tracking", "24/7 support"]
   },
