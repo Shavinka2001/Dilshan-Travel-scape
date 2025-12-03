@@ -235,7 +235,7 @@ export default function ToursPage() {
               Custom Tour Request
             </Link>
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94778197348"
               className="border border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary/5 transition-colors"
             >
               WhatsApp Us

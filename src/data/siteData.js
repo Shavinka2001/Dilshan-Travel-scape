@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Dilshan Travelscape",
-  description: "Premium vehicle rentals and guided tours in Sri Lanka",
+  description: "Premium vehicle rentals, guided tours, and all-island airport transfer services across Sri Lanka. Professional chauffeur services, luxury fleet, and comprehensive travel solutions.",
   phone: "+94 77 819 7348",
   email: "dilshantravelscape.com",
   address: "Welewaththa,Hiriketiya,Dickwella,Sri Lanka",
@@ -14,8 +14,8 @@ export const siteConfig = {
 export const services = [
   {
     id: 1,
-    title: "Vehicle & Bike Rentals",
-    description: "Premium cars,bikes, vans, and buses for comfortable travel",
+    title: "Vehicle & scooter Rentals",
+    description: "Premium cars,scooters, vans, and buses for comfortable travel",
     icon: "🚗",
     features: ["Air-conditioned vehicles", "Professional drivers", "GPS tracking", "24/7 support"]
   },
@@ -28,10 +28,23 @@ export const services = [
   },
   {
     id: 3,
-    title: "Airport Transfers",
-    description: "Reliable pickup and drop-off services",
+    title: "All Island Airport Pickup & Drop Service",
+    description: "Comprehensive island-wide airport transfers and premium hire services covering all major airports and destinations across Sri Lanka",
     icon: "✈️",
-    features: ["Flight tracking", "Meet & greet", "Luggage assistance", "Fixed rates"]
+    features: [
+      "All major airports coverage (Colombo, Mattala)",
+      "Island-wide pickup & drop service",
+      "Professional chauffeur service",
+      "Flight tracking & monitoring",
+      "VIP meet & greet service",
+      "Luxury vehicle fleet",
+      "24/7 availability",
+      "Luggage assistance & care",
+      "Fixed transparent pricing",
+      "Multi-destination transfers",
+      "Group transportation solutions",
+      "Executive & corporate services"
+    ]
   }
 ];
 
@@ -44,11 +57,11 @@ export const packages = [
     longDescription: "Experience a 6-day Sri Lanka tour covering Galle Fort, Nuwara Eliya, and the island's most scenic destinations. Enjoy culture, nature, mountains, and unforgettable travel experiences. Perfect Sri Lanka holiday package for all travelers.",
     duration: "6 days / 5 nights",
     price: "1 person: $350 | 2 persons: $450",
-    priceFrom: 350,
+    priceFrom: 360,
     groupSize: "1-6 people",
     difficulty: "Easy",
     season: "Year-round",
-    // SEO Optimization
+    // SEO Optimizatio
     seo: {
       metaTitle: "Sri Lanka 6 Day Tour Package | Highlights of Ceylon | Dilshan Travelscape",
       metaDescription: "Explore Sri Lanka's best in 6 days! Visit Galle Fort, Ella, Yala Safari, Nuwara Eliya, Kandy & Sigiriya. Complete tour package with accommodation, transport & guide. Book now!",
@@ -119,41 +132,41 @@ export const packages = [
         day: 2,
         title: "Southern Coast Adventure",
         description: "Visit Mirissa and Hiriketiya beaches. Optional whale watching tour (seasonal).",
-        activities: ["Mirissa Beach", "Whale watching (optional)", "Hiriketiya surfing spot", "Stilt fishermen"],
-        accommodation: "Beach Resort",
-        meals: "Breakfast, Lunch, Dinner"
+        activities: ["Mirissa Beach", "Whale watching (optional)", "Hiriketiya surfing spot", "Blue beach Island visit"],
+        accommodation: "N/A",
+        meals: "N/A"
       },
       {
         day: 3,
         title: "Yala Safari Experience",
         description: "Early morning safari at Yala National Park to spot leopards, elephants, and exotic birds.",
-        activities: ["Morning safari", "Wildlife photography", "Afternoon safari"],
-        accommodation: "Safari Lodge",
-        meals: "Breakfast, Lunch, Dinner"
+        activities: ["Morning safari", "Wildlife photography", "Sithullpawwa temple","Kirinda beach visit","Tissa lake visit"],
+        accommodation: "N/A",
+        meals: "N/A"
       },
       {
         day: 4,
         title: "Hill Country Journey",
         description: "Travel to Ella through scenic mountain roads. Visit Nine Arch Bridge and Little Adam's Peak.",
-        activities: ["Nine Arch Bridge", "Little Adam's Peak hike", "Tea plantation visit"],
-        accommodation: "Mountain View Hotel",
-        meals: "Breakfast, Lunch, Dinner"
+        activities: ["Nine Arch Bridge", "Little Adam's Peak hike", "Tea plantation visit","Ella rock climb","Ravana falls","Train ride experience"],
+        accommodation: "N/A",
+        meals: "N/A"
       },
       {
         day: 5,
         title: "Nuwara Eliya & Kandy",
         description: "Explore Nuwara Eliya's colonial charm, then travel to Kandy, the cultural capital.",
-        activities: ["Tea factory tour", "Gregory Lake", "Temple of the Tooth", "Cultural dance show"],
-        accommodation: "Kandy City Hotel",
-        meals: "Breakfast, Lunch, Dinner"
+        activities: ["Tea factory & state tour", "Gregory Lake", "Temple of the Tooth", "Post Office visit","Ambuluwawa Temple"],
+        accommodation: "N/A",
+        meals: "N/A"
       },
       {
         day: 6,
         title: "Sigiriya & Departure",
         description: "Visit the magnificent Sigiriya Rock Fortress before departure.",
-        activities: ["Sigiriya Rock climb", "Sigiriya Museum", "Airport transfer"],
+        activities: ["Sigiriya Rock climb", "Sigiriya Museum","Spice & Hearbal garden","Dambulla Cave Temple ", "Airport transfer"],
         accommodation: "N/A",
-        meals: "Breakfast, Lunch"
+        meals: "N/A"
       }
     ]
   },
@@ -201,7 +214,7 @@ export const packages = [
       "/images/galle.jpg",
       "/images/ella.jpg"
     ],
-    highlights: ["", "Royal Botanical Gardens", "Kandy Lake", "Traditional Dance Show"],
+    highlights: ["Gangaramaya Temple", "Royal Botanical Gardens", "Kandy Lake", "Traditional Dance Show","Independence Square","Nuwara Eliya Tea Factory","Nine Arch Bridge","Yala National Park Safari","Anuradhapura","Willpattu National Park"],
     inclusions: [
       "1 night accommodation",
       "All meals",
@@ -221,8 +234,8 @@ export const packages = [
         title: "Kandy Arrival & City Tour",
         description: "Explore Kandy's main attractions including the sacred Temple of the Tooth.",
         activities: ["Temple of the Tooth", "Kandy Lake walk", "City market visit", "Traditional dance show"],
-        accommodation: "Kandy Heritage Hotel",
-        meals: "Lunch, Dinner"
+        accommodation: "N/A",
+        meals: "N/A"
       },
       {
         day: 2,
@@ -230,7 +243,7 @@ export const packages = [
         description: "Visit the world-famous Royal Botanical Gardens before departure.",
         activities: ["Royal Botanical Gardens", "Spice garden tour", "Local handicraft shopping"],
         accommodation: "N/A",
-        meals: "Breakfast, Lunch"
+        meals: "N/A"
       }
     ]
   },

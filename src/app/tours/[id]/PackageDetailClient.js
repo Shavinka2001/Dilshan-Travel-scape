@@ -437,21 +437,21 @@ export default function PackageDetailClient() {
                 
                 <div className="space-y-4">
                   <a 
-                    href="tel:+94771234567"
+                    href="tel:+94778197348"
                     className="flex items-center space-x-3 text-neutral hover:text-primary transition-colors"
                   >
                     <FaPhone className="text-primary" />
-                    <span>+94 77 123 4567</span>
+                    <span>+94 77 8197348</span>
                   </a>
                   <a 
                     href="mailto:info@dilshantravelscape.com"
                     className="flex items-center space-x-3 text-neutral hover:text-primary transition-colors"
                   >
                     <FaEnvelope className="text-primary" />
-                    <span>info@dilshantravelscape.com</span>
+                    <span>dilshantravelscape@gmail.com</span>
                   </a>
                   <a 
-                    href="https://wa.me/94771234567"
+                    href="https://wa.me/94778197348"
                     className="flex items-center space-x-3 text-neutral hover:text-primary transition-colors"
                   >
                     <FaWhatsapp className="text-primary" />
