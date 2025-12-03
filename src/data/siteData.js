@@ -12,20 +12,21 @@ export const siteConfig = {
 };
 
 export const services = [
-  {
+    {
     id: 1,
-    title: "Vehicle & scooter Rentals",
-    description: "Premium cars,scooters, vans, and buses for comfortable travel",
-    icon: "🚗",
-    features: ["Air-conditioned vehicles", "Professional drivers", "GPS tracking", "24/7 support"]
-  },
-  {
-    id: 2,
     title: "Round Tours",
     description: "Explore Sri Lanka's beauty with experienced local guides",
     icon: "🗺️",
     features: ["Local expertise", "Customized itineraries", "Cultural insights", "Photography spots"]
   },
+  {
+    id: 2,
+    title: "Vehicle & scooter Rentals",
+    description: "Premium cars,scooters, vans, and buses for comfortable travel",
+    icon: "🚗",
+    features: ["Air-conditioned vehicles", "Professional drivers", "GPS tracking", "24/7 support"]
+  },
+
   {
     id: 3,
     title: "All Island Airport Pickup & Drop Service",
