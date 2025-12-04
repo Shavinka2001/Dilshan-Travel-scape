@@ -73,7 +73,7 @@ const destinations = [
     bestTime: "December - March",
     difficulty: "Moderate",
     icon: "🌄",
-    image: "/images/ninearch(1).jpg",
+    image: "/images/ninearch(2) (1).jpg",
     color: "from-green-500/10 to-green-600/20",
     features: ["Mountain Views", "Tea Culture", "Hiking Trails", "Scenic Railways"]
   },
@@ -115,7 +115,7 @@ const destinations = [
     bestTime: "November - March",
     difficulty: "Moderate",
     icon: "🏛️",
-    image: "/images/anuradhapura.jpg",
+    image: "/images/anuradhpura (1).jpg",
     color: "from-red-500/10 to-red-600/20",
     features: ["UNESCO Site", "Sacred Sites", "Ancient Architecture", "Buddhist Heritage"]
   }
