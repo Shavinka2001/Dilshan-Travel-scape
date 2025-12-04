@@ -17,6 +17,7 @@ const destinations = [
     bestTime: "Year-round",
     difficulty: "Easy",
     icon: "🏛️",
+    image: "/images/colombo(1).jpg",
     color: "from-blue-500/10 to-blue-600/20",
     features: ["Historical Sites", "Shopping", "Fine Dining", "Museums"]
   },
@@ -30,6 +31,7 @@ const destinations = [
     bestTime: "December - April",
     difficulty: "Moderate",
     icon: "🏯",
+    image: "/images/kandy.jpg",
     color: "from-purple-500/10 to-purple-600/20",
     features: ["UNESCO Site", "Cultural Shows", "Botanical Gardens", "Lake Views"]
   },
@@ -43,6 +45,7 @@ const destinations = [
     bestTime: "November - April", 
     difficulty: "Easy",
     icon: "🏖️",
+    image: "/images/galle fort.jpg",
     color: "from-teal-500/10 to-teal-600/20",
     features: ["UNESCO Fort", "Pristine Beaches", "Marine Life", "Coastal Culture"]
   },
@@ -56,6 +59,7 @@ const destinations = [
     bestTime: "December - March",
     difficulty: "Challenging",
     icon: "🗿",
+    image: "/images/sigiriya(1).jpg",
     color: "from-orange-500/10 to-orange-600/20",
     features: ["UNESCO Site", "Ancient Art", "Panoramic Views", "Archaeological Wonder"]
   },
@@ -69,6 +73,7 @@ const destinations = [
     bestTime: "December - March",
     difficulty: "Moderate",
     icon: "🌄",
+    image: "/images/ninearch(1).jpg",
     color: "from-green-500/10 to-green-600/20",
     features: ["Mountain Views", "Tea Culture", "Hiking Trails", "Scenic Railways"]
   },
@@ -82,6 +87,7 @@ const destinations = [
     bestTime: "December - March",
     difficulty: "Easy",
     icon: "🍃",
+    image: "/images/nuwaraeliya(1).jpg",
     color: "from-emerald-500/10 to-emerald-600/20",
     features: ["Cool Climate", "Tea Estates", "Colonial Heritage", "Nature Parks"]
   },
@@ -95,6 +101,7 @@ const destinations = [
     bestTime: "February - July",
     difficulty: "Easy",
     icon: "🦁",
+    image: "/images/yala(1).jpg",
     color: "from-amber-500/10 to-amber-600/20",
     features: ["Wildlife Safari", "Leopards", "Ancient Ruins", "Bird Paradise"]
   },
@@ -108,6 +115,7 @@ const destinations = [
     bestTime: "November - March",
     difficulty: "Moderate",
     icon: "🏛️",
+    image: "/images/anuradhapura.jpg",
     color: "from-red-500/10 to-red-600/20",
     features: ["UNESCO Site", "Sacred Sites", "Ancient Architecture", "Buddhist Heritage"]
   }
@@ -165,8 +173,14 @@ export default function DestinationsPage() {
                 className="bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-primary/20 group"
               >
                 {/* Image Header */}
-                <div className={`relative h-48 sm:h-56 bg-gradient-to-br ${destination.color} flex items-center justify-center overflow-hidden`}>
-                  <div className="text-4xl sm:text-5xl md:text-6xl opacity-60">
+                <div className="relative h-48 sm:h-56 overflow-hidden group">
+                  <img
+                    src={destination.image}
+                    alt={destination.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-3xl sm:text-4xl filter drop-shadow-lg">
                     {destination.icon}
                   </div>
                   
