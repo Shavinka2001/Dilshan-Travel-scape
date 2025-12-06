@@ -190,7 +190,7 @@ export const packages = [
     duration: "9 days / 8 nights",
     price: "2 persons: $700 | 4 persons: $1000",
     priceFrom: 700,
-    groupSize: "1-8 people",
+    groupSize: "1-6 people",
     difficulty: "Easy to Moderate",
     season: "Year-round (best: December - March, June - September)",
     // SEO Optimization
@@ -509,8 +509,8 @@ export const packages = [
     image: "/images/galle.jpg",
     gallery: [
       "/images/galle.jpg",
-      "/images/ella.jpg",
-      "/images/galle.jpg"
+      "/images/turtel.jpg",
+      "/images/whale watching.jpg"
     ],
     highlights: ["whale watching","Turtle Hatchery", "Madu River", "Galle Fort"],
     inclusions: [
