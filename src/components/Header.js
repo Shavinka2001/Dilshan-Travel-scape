@@ -12,6 +12,7 @@ export default function Header() {
     { name: 'Home', href: '/', isPage: true },
     { name: 'Tours', href: '/tours', isPage: true },
     { name: 'Destinations', href: '/destinations', isPage: true },
+    { name: 'Reviews', href: '/reviews', isPage: true },
     { name: 'About', href: '/about', isPage: true },
     { name: 'Contact', href: '/contact', isPage: true }
   ];
@@ -37,8 +38,23 @@ export default function Header() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navItems.map((item) => {
+              // Special styling for Reviews page
+              if (item.name === 'Reviews') {
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-sm text-neutral/80 hover:text-primary transition-all duration-300 font-medium py-1 px-3 rounded-full hover:bg-primary/5 relative group"
+                    aria-label={`Navigate to ${item.name}`}
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </Link>
+                );
+              }
+              
               if (item.isPage) {
                 return (
                   <Link
@@ -82,6 +98,23 @@ export default function Header() {
         <div className={`lg:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
           <div className="bg-white border-t border-gray-100 py-3 sm:py-4 space-y-1 rounded-b-2xl shadow-lg">
             {navItems.map((item, index) => {
+              // Special styling for Reviews page in mobile menu
+              if (item.name === 'Reviews' && item.isPage) {
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block py-3 px-4 sm:px-6 text-sm text-neutral/80 hover:text-primary hover:bg-primary/5 transition-all duration-300 rounded-xl font-medium mx-1 sm:mx-2 relative group"
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-label={`Navigate to ${item.name}`}
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </Link>
+                );
+              }
+              
               if (item.isPage) {
                 return (
                   <Link

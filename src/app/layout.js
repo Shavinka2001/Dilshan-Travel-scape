@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import FloatingReviewButton from "../components/FloatingReviewButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,14 +16,50 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Dilshan Travelscape - Premium Vehicle Rentals & Tours in Sri Lanka",
-    template: "%s | Dilshan Travelscape"
+    default: "Dilshan Travelscape - Sri Lanka Travel & Tours | Private Driver & Car Rental",
+    template: "%s | Dilshan Travelscape - Sri Lanka Travel & Tours"
   },
-  description: "Experience Sri Lanka with Dilshan Travelscape. Premium vehicle rentals, guided tours, and airport transfers. Professional drivers, 15+ years experience, 24/7 support. Book your Sri Lankan adventure today!",
-  keywords: ["Sri Lanka tours", "vehicle rental Sri Lanka", "Colombo tours", "Kandy tours", "airport transfer", "car rental", "tour guide", "travel Sri Lanka", "vacation packages"],
+  description: "#1 Tour Operator in Sri Lanka 🇱🇰 Premium private driver services, car rental, and tour packages. Expert local guides, luxury vehicles, airport transfers. Book authentic Sri Lankan adventures with trusted professionals since 2009.",
+  keywords: [
+    // Primary Keywords
+    "Sri Lanka travel and tours",
+    "private driver Sri Lanka", 
+    "tour operator Sri Lanka",
+    "car rental Sri Lanka",
+    
+    // Secondary Keywords
+    "Sri Lanka tour packages",
+    "Colombo private driver",
+    "airport transfer Sri Lanka",
+    "hire car with driver Sri Lanka",
+    "Sri Lanka travel agency",
+    "tour guide Sri Lanka",
+    
+    // Location-specific
+    "Kandy tours",
+    "Galle tours", 
+    "Ella tours",
+    "Sigiriya tours",
+    "Anuradhapura tours",
+    "Nuwara Eliya tours",
+    "Yala safari tours",
+    
+    // Service Keywords
+    "vehicle rental with driver",
+    "chauffeur service Sri Lanka",
+    "custom tour packages",
+    "group tours Sri Lanka",
+    "honeymoon packages Sri Lanka",
+    "family tours Sri Lanka",
+    "luxury car hire Sri Lanka",
+    "minivan rental Sri Lanka",
+    "wedding car rental"
+  ],
   authors: [{ name: "Dilshan Travelscape" }],
   creator: "Dilshan Travelscape",
   publisher: "Dilshan Travelscape",
+  category: "Travel & Tourism",
+  classification: "Travel Agency",
   formatDetection: {
     email: false,
     address: false,
@@ -30,43 +67,65 @@ export const metadata = {
   },
   metadataBase: new URL('https://dilshantravelscape.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://dilshantravelscape.com',
   },
   openGraph: {
-    title: "Dilshan Travelscape - Premium Vehicle Rentals & Tours in Sri Lanka",
-    description: "Experience Sri Lanka with premium vehicle rentals and guided tours. Professional service, competitive rates, 24/7 support.",
+    title: "Dilshan Travelscape - Sri Lanka's #1 Private Driver & Tour Operator",
+    description: "🌟 Premium Sri Lankan travel experiences with expert private drivers & authentic tour packages. Luxury vehicles, professional guides, 24/7 support. Perfect for WhatsApp booking! 🇱🇰",
     url: "https://dilshantravelscape.com",
     siteName: "Dilshan Travelscape",
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Dilshan Travelscape - Sri Lanka Tourism',
+        alt: 'Dilshan Travelscape - Sri Lanka Travel & Tours',
       },
+      {
+        url: '/images/sigiriya(1).jpg',
+        width: 800,
+        height: 600,
+        alt: 'Sigiriya Rock Fortress - Sri Lanka Tours',
+      }
     ],
     locale: 'en_US',
     type: 'website',
+    countryName: 'Sri Lanka',
+    phoneNumber: '+94 77 819 7348',
+    emails: ['dilshantravelscape@gmail.com'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Dilshan Travelscape - Premium Vehicle Rentals & Tours",
-    description: "Experience Sri Lanka with premium vehicle rentals and guided tours. Book your adventure today!",
-    images: ['/twitter-image.jpg'],
+    site: '@DilshanTours',
+    creator: '@DilshanTours',
+    title: "Dilshan Travelscape - Private Driver & Tours Sri Lanka",
+    description: "🇱🇰 Premium Sri Lankan travel experiences. Private drivers, tour packages, car rental. Book authentic adventures with trusted professionals!",
+    images: ['/images/logo.png'],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'your-google-verification-code-here',
+    yandex: 'your-yandex-verification-code-here',
+  },
+  other: {
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'Dilshan Travelscape',
+    'application-name': 'Dilshan Travelscape',
+    'msapplication-TileColor': '#1A73E8',
+    'theme-color': '#1A73E8',
   },
 };
 
@@ -197,6 +256,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
         {children}
+        <FloatingReviewButton />
       </body>
     </html>
   );

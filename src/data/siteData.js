@@ -2,12 +2,22 @@ export const siteConfig = {
   name: "Dilshan Travelscape",
   description: "Premium vehicle rentals, guided tours, and all-island airport transfer services across Sri Lanka. Professional chauffeur services, luxury fleet, and comprehensive travel solutions.",
   phone: "+94 77 819 7348",
-  email: "dilshantravelscape.com",
+  email: "dilshantravelscape@gmail.com",
   address: "Welewaththa,Hiriketiya,Dickwella,Sri Lanka",
+  coordinates: {
+    lat: 5.9738,
+    lng: 80.7675
+  },
+  googleMaps: {
+    placeId: "ChIJyY4DzBeB4joRaJ5EaLYt3AU",
+    businessId: "dilshan-travelscape",
+    reviewUrl: "https://maps.app.goo.gl/5TBKMjZd8vyhvjic9"
+  },
   social: {
     facebook: "https://facebook.com/dilshantravelscape",
     instagram: "https://instagram.com/dilshantravelscape",
-    whatsapp: "https://wa.me/94778197348"
+    whatsapp: "https://wa.me/94778197348",
+    googleMyBusiness: "https://maps.app.goo.gl/5TBKMjZd8vyhvjic9"
   }
 };
 
@@ -174,37 +184,59 @@ export const packages = [
   {
     id: 2,
     title: "Sri Lanka 9-Day Cultural & Nature Tour",
-    subtitle: "Explore Sri Lanka's Best Cultural Sites, Hill Country, Wildlife, and Beaches in 9 Days",
-    description: "A Complete 9-Day Journey Through Sri Lanka's Top Highlights",
-    longDescription: "Explore Sri Lanka in 9 days—Sigiriya, Kandy, Ella, Yala Safari, and southern beaches. A perfect mix of culture, nature, and adventure.",
-    duration: "9 days / 8 night",
-    price: "$120",
-    priceFrom: 120,
-    groupSize: "1-6 people",
-    difficulty: "Easy",
-    season: "Year-round",
+    subtitle: "Complete Island Experience: Ancient Kingdoms, Hill Country, Wildlife & Beaches",
+    description: "The ultimate 9-day Sri Lanka tour—explore ancient cities, cultural landmarks, hill-country landscapes, wildlife safaris, and pristine beaches in one perfect adventure.",
+    longDescription: "Discover Sri Lanka in 9 unforgettable days—explore ancient cities, iconic cultural sites, lush hill country, exciting wildlife safaris, and pristine southern beaches. The perfect all-in-one Sri Lanka tour experience.",
+    duration: "9 days / 8 nights",
+    price: "2 persons: $700 | 4 persons: $1000",
+    priceFrom: 700,
+    groupSize: "1-8 people",
+    difficulty: "Easy to Moderate",
+    season: "Year-round (best: December - March, June - September)",
     // SEO Optimization
     seo: {
-      metaTitle: "9 Day Sri Lanka Cultural & Nature Tour | Complete Island Experience",
-      metaDescription: "Comprehensive 9-day Sri Lanka tour covering cultural sites, hill country, wildlife & beaches. Sigiriya, Kandy, Ella, Yala Safari included. From $120 per person.",
-      keywords: ["9 day Sri Lanka tour", "Sri Lanka cultural tour", "Ceylon nature tour", "Sigiriya Kandy Ella tour", "Sri Lanka wildlife safari", "complete Sri Lanka package", "budget Sri Lanka tour", "extended Sri Lanka holiday"],
+      metaTitle: "Ultimate 9-Day Sri Lanka Cultural & Nature Tour | Complete Island Experience 2024",
+      metaDescription: "Complete 9-day Sri Lanka tour: Colombo, Anuradhapura, Sigiriya, Kandy, Nuwara Eliya, Ella, Yala Safari, beaches. 2 persons $700 | 4 persons $1000. Book your Ceylon adventure!",
+      keywords: ["9 day Sri Lanka tour", "complete Sri Lanka package", "Colombo Sigiriya Kandy tour", "Ella Yala safari package", "Sri Lanka cultural heritage tour", "Ceylon nature wildlife tour", "extended Sri Lanka holiday", "comprehensive island tour", "ancient cities hill country beaches"],
       canonicalUrl: "/tours/2",
-      ogTitle: "Complete 9-Day Sri Lanka Cultural & Nature Experience",
-      ogDescription: "Experience all of Sri Lanka in 9 days! Ancient kingdoms, tea plantations, wildlife safaris, and pristine beaches. Perfect for culture and nature lovers.",
+      ogTitle: "Ultimate 9-Day Sri Lanka Experience | Culture, Nature & Wildlife Tour",
+      ogDescription: "Complete Sri Lanka in 9 days! Ancient kingdoms, UNESCO sites, hill country, wildlife safaris, pristine beaches. Professional guide, comfortable transport included.",
       ogImage: "/images/ella.jpg",
-      twitterTitle: "9-Day Complete Sri Lanka Tour | Culture + Nature",
-      twitterDescription: "Ancient sites, hill country, wildlife & beaches in one amazing 9-day Sri Lanka adventure. Book your extended Ceylon tour!",
+      twitterTitle: "Complete 9-Day Sri Lanka Adventure | All Highlights Tour",
+      twitterDescription: "Ancient cities + hill country + wildlife + beaches = Ultimate 9-day Sri Lanka experience. From $350 per person. Book your complete Ceylon adventure today!",
       structuredData: {
         "@type": "TouristTrip",
         "name": "Sri Lanka 9-Day Cultural & Nature Tour",
-        "description": "A comprehensive 9-day journey through Sri Lanka's cultural heritage sites, stunning hill country, diverse wildlife, and beautiful beaches.",
-        "touristType": ["Cultural Tourist", "Nature Tourist", "Wildlife Tourist"],
+        "description": "A comprehensive 9-day journey covering Sri Lanka's complete highlights: ancient kingdoms, cultural sites, hill country, wildlife safaris, and beautiful beaches.",
+        "touristType": ["Cultural Tourist", "Nature Tourist", "Wildlife Tourist", "Adventure Tourist"],
         "duration": "P9D",
         "offers": {
           "@type": "Offer",
-          "price": "120",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
+          "price": "350",
+          "priceCurrency": "USD", 
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": [
+            {
+              "@type": "UnitPriceSpecification",
+              "price": "700",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "2",
+                "unitText": "persons"
+              }
+            },
+            {
+              "@type": "UnitPriceSpecification", 
+              "price": "1000",
+              "priceCurrency": "USD",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": "4", 
+                "unitText": "persons"
+              }
+            }
+          ]
         }
       }
     },
@@ -213,38 +245,211 @@ export const packages = [
     gallery: [
       "/images/ella.jpg",
       "/images/galle.jpg",
-      "/images/ella.jpg"
+      "/images/nuwaraeliya.jpg",
+      "/images/sigiriya.jpg"
     ],
-    highlights: ["Gangaramaya Temple", "Royal Botanical Gardens", "Kandy Lake", "Traditional Dance Show","Independence Square","Nuwara Eliya Tea Factory","Nine Arch Bridge","Yala National Park Safari","Anuradhapura","Willpattu National Park"],
+    highlights: [
+      "Gangaramaya Temple & Colombo City Tour", 
+      "Ancient Anuradhapura & Wilpattu Safari", 
+      "Sigiriya Lion Rock & Dambulla Cave Temple",
+      "Temple of the Tooth & Kandy Cultural Show",
+      "Nuwara Eliya Tea Country & Scenic Train Ride", 
+      "Ella Nine Arch Bridge & Little Adam's Peak",
+      "Yala National Park Safari", 
+      "Southern Beaches & Surfing",
+      "Historic Galle Fort & Madu River Safari"
+    ],
     inclusions: [
-      "1 night accommodation",
-      "All meals",
-      "Professional guide",
-      "Transportation",
-      "Entrance fees",
-      "Cultural dance show tickets"
+      "8 nights accommodation (hotels/guesthouses)",
+      "All transportation in air-conditioned vehicle",
+      "Professional English-speaking guide/driver", 
+      "All entrance fees to attractions",
+      "Safari fees (Wilpattu & Yala National Parks)",
+      "Train tickets (scenic hill country route)",
+      "Traditional cultural show in Kandy",
+      "Airport pickup and drop-off",
+      "Bottled water throughout the tour",
+      "Government taxes and service charges"
     ],
     exclusions: [
-      "Personal expenses",
-      "Optional activities",
-      "Tips"
+      "International flights",
+      "Travel insurance (recommended)",
+      "Meals (lunch & dinner - can be arranged)",
+      "Personal expenses and shopping",
+      "Alcoholic beverages",
+      "Camera fees at some attractions",
+      "Tips and gratuities",
+      "Optional activities (surfing lessons, etc.)"
     ],
     itinerary: [
       {
         day: 1,
-        title: "Kandy Arrival & City Tour",
-        description: "Explore Kandy's main attractions including the sacred Temple of the Tooth.",
-        activities: ["Temple of the Tooth", "Kandy Lake walk", "City market visit", "Traditional dance show"],
+        title: "Colombo Discovery & Journey to Anuradhapura",
+        description: "Begin your Sri Lankan adventure with a comprehensive Colombo city tour, exploring the capital's rich blend of colonial architecture, modern attractions, and cultural landmarks. After lunch, journey to the ancient kingdom of Anuradhapura.",
+        activities: [
+          "Gangaramaya Temple - iconic Buddhist temple with museum",
+          "Independence Square - colonial memorial and park", 
+          "Lotus Tower - modern architectural marvel (exterior)",
+          "Jami Ul-Alfar Red Mosque - stunning Indo-Saracenic architecture",
+          "National Gem Museum - precious stones exhibition",
+          "Baddegama Wetland - bird watching and nature walk",
+          "Galle Face Green - oceanfront promenade",
+          "Dutch Period Museum - colonial history exhibits"
+        ],
         accommodation: "N/A",
-        meals: "N/A"
+        meals: "N/A",
+        travelTime: "3 hours Colombo to Anuradhapura",
+        highlights: "Experience Colombo's cultural diversity and historical significance"
       },
       {
         day: 2,
-        title: "Botanical Gardens & Departure",
-        description: "Visit the world-famous Royal Botanical Gardens before departure.",
-        activities: ["Royal Botanical Gardens", "Spice garden tour", "Local handicraft shopping"],
+        title: "Ancient Anuradhapura & Wilpattu Safari Adventure", 
+        description: "Discover Sri Lanka's first ancient capital and oldest national park. Explore sacred Buddhist sites dating back over 2,000 years, then embark on an exciting safari to spot leopards and elephants.",
+        activities: [
+          "Wilpattu National Park Safari - leopards, elephants, sloth bears",
+          "Ruwanwelisaya Stupa - magnificent ancient Buddhist monument", 
+          "Jaya Sri Maha Bodhi - sacred Bo tree (over 2,300 years old)",
+          "Kuttam Pokuna (Twin Ponds) - ancient bathing tanks",
+          "Archaeological Museum - artifacts and history",
+          "Abhayagiri Monastery - monastic complex ruins",
+          "Moonstone carvings - exquisite ancient art"
+        ],
+        accommodation: "N/A", 
+        meals: "N/A",
+        travelTime: "2 hours Anuradhapura to Sigiriya",
+        highlights: "Ancient Buddhist heritage and wildlife safari in one day"
+      },
+      {
+        day: 3,
+        title: "Sigiriya Lion Rock & Cultural Triangle Wonders",
+        description: "Climb the magnificent Sigiriya Lion Rock fortress, explore ancient Dambulla Cave Temple, and visit a traditional spice garden. Experience Sri Lanka's cultural triangle at its finest.",
+        activities: [
+          "Sigiriya Lion Rock Fortress - UNESCO World Heritage climb",
+          "Pidurangala Rock - alternative viewpoint and sunset spot",
+          "Dambulla Cave Temple - five cave temples with ancient murals", 
+          "Spice & Herbal Garden - traditional medicine and spices",
+          "Sigiriya Museum - archaeological exhibits and history",
+          "Local village visit - authentic rural experience",
+          "Traditional craft demonstrations"
+        ],
         accommodation: "N/A",
-        meals: "N/A"
+        meals: "N/A", 
+        travelTime: "2.5 hours Sigiriya to Kandy",
+        highlights: "Iconic Lion Rock climb and ancient cave art masterpieces"
+      },
+      {
+        day: 4,
+        title: "Kandy Cultural Immersion & Hill Country Journey",
+        description: "Explore the last kingdom of Sri Lanka, visit the sacred Temple of the Tooth, enjoy panoramic viewpoints, and experience traditional cultural performances before heading to the hill country.",
+        activities: [
+          "Temple of the Tooth (Sri Dalada Maligawa) - most sacred Buddhist site",
+          "Kandy Lake - scenic walk around the historic lake",
+          "Bahirawakanda Viewpoint - panoramic Kandy city views",
+          "Ambuluwawa Tower - multi-religious harmony symbol", 
+          "Nelligala Buddhist Temple - hilltop meditation center",
+          "Traditional Kandyan dance show - cultural performance",
+          "Royal Botanical Gardens Peradeniya - tropical flora",
+          "Gem museum and workshop visit"
+        ],
+        accommodation: "N/A",
+        meals: "N/A",
+        travelTime: "2.5 hours Kandy to Nuwara Eliya", 
+        highlights: "Sacred Temple of the Tooth and vibrant cultural performances"
+      },
+      {
+        day: 5,
+        title: "Nuwara Eliya Tea Country & Scenic Train Experience",
+        description: "Discover 'Little England' in the heart of Sri Lanka's tea country. Visit tea plantations, enjoy colonial architecture, and experience one of the world's most scenic train rides.",
+        activities: [
+          "Gregory Lake & Park - boating and leisure activities",
+          "Sita Amman Temple (Seetha Eliya) - Hindu temple with Ramayana connection",
+          "Tea factory and plantation tour - Ceylon tea production process",
+          "Hakgala Botanical Gardens - cool climate flora",
+          "Nuwara Eliya town tour - colonial architecture and post office",
+          "Galway's Land National Park - montane forest",
+          "Devon & St. Clair Falls - twin waterfalls",
+          "Scenic train ride preparation (Nanu Oya to Ella)"
+        ],
+        accommodation: "N/A", 
+        meals: "N/A",
+        travelTime: "3 hours by train (most scenic route in Sri Lanka)",
+        highlights: "World-famous tea plantations and breathtaking mountain scenery"
+      },
+      {
+        day: 6,
+        title: "Ella Adventures & Mountain Peaks",
+        description: "Experience the magical beauty of Ella with iconic landmarks, adventurous hikes, and stunning viewpoints. Enjoy the famous train ride and explore mountain peaks.",
+        activities: [
+          "Scenic train ride (Nanu Oya to Ella) - world's most beautiful train journey", 
+          "Nine Arch Bridge - iconic railway bridge and photo spot",
+          "Demodara Railway Loop - engineering marvel spiral",
+          "Flying Ravana Mega Zipline - adventure activity (optional)",
+          "Ravana Falls - picturesque waterfall and swimming spot",
+          "Little Adam's Peak - easy hiking with panoramic views",
+          "Ella Rock hike - challenging trek with spectacular summit views", 
+          "Tea plantation visit - authentic tea estate experience"
+        ],
+        accommodation: "N/A",
+        meals: "N/A", 
+        travelTime: "4 hours Ella to Tissamaharama",
+        highlights: "Iconic Nine Arch Bridge and spectacular mountain hiking"
+      },
+      {
+        day: 7,
+        title: "Yala Safari & Ancient Temples Discovery",
+        description: "Embark on an exciting wildlife safari in Yala National Park, famous for leopards and elephants. Explore ancient temples and enjoy boat safari experiences.",
+        activities: [
+          "Yala National Park Safari - leopards, elephants, crocodiles, birds",
+          "Tissa Lake boat safari - evening wildlife and bird watching", 
+          "Kataragama Temple - multi-religious pilgrimage site",
+          "Sithulpawwa Rock Temple - ancient forest monastery",
+          "Kirinda Beach - pristine coastal beauty",
+          "Bundala National Park (optional) - migratory birds sanctuary", 
+          "Local fishing village visit - authentic coastal culture",
+          "Sunset photography at Yala"
+        ],
+        accommodation: "N/A",
+        meals: "N/A",
+        travelTime: "2 hours Tissamaharama to Hiriketiya", 
+        highlights: "World-class wildlife safari and pristine southern beaches"
+      },
+      {
+        day: 8,
+        title: "Southern Coast Beaches & Water Adventures",
+        description: "Relax and enjoy Sri Lanka's stunning southern coastline with surfing, beach activities, and scenic coastal exploration. Experience the laid-back beach culture.",
+        activities: [
+          "Surfing lessons at Hiriketiya Beach - perfect waves for beginners",
+          "Turtle Beach Balapitiya - turtle watching and conservation center",
+          "Blue Whale Point - whale watching viewpoint", 
+          "Mirissa Coconut Tree Hill - iconic Instagram spot and sunset views",
+          "Beach relaxation and swimming - pristine tropical beaches",
+          "Coconut palm climbing demonstration - local tradition",
+          "Fishing boat excursion - traditional stilt fishing (seasonal)",
+          "Beachside seafood dining experience"
+        ],
+        accommodation: "N/A",
+        meals: "N/A",
+        travelTime: "1 hour Hiriketiya to Galle",
+        highlights: "Perfect surfing waves and stunning tropical beach experiences"
+      },
+      {
+        day: 9,
+        title: "Galle Fort Heritage & Madu River Safari - Departure",
+        description: "Conclude your Sri Lankan adventure with a heritage walk through historic Galle Fort, river safari experience, and cultural activities before departure.",
+        activities: [
+          "Galle Fort UNESCO World Heritage Site - complete walking tour",
+          "Maritime Archaeological Museum - colonial naval history", 
+          "Madu River boat safari - mangrove ecosystem and biodiversity",
+          "Fish therapy spa experience - natural foot treatment by doctor fish",
+          "Traditional puppet museum - cultural art forms",
+          "Dutch Reformed Church - colonial religious architecture",
+          "Galle Lighthouse - historic landmark and ocean views", 
+          "Last-minute souvenir shopping at Galle Fort"
+        ],
+        departure: "N/A",
+        meals: "N/A",
+        travelTime: "2 hours Galle to Colombo Airport", 
+        highlights: "Historic Galle Fort exploration and unique river safari experience"
       }
     ]
   },
