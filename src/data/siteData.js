@@ -637,9 +637,9 @@ export const packages = [
     image: "/images/ella.jpg",
     gallery: [
       "/images/ella.jpg",
-      "/images/ninearch.jpg",
-      "/images/yala-safari.jpg",
-      "/images/little-adams-peak.jpg"
+      "/images/yala(1).jpg",
+      "/images/ellatrain.jpg",
+      "/images/littleadems peak.jpg"
     ],
     highlights: ["Yala Safari (Leopards & Elephants)", "Scenic Train Ride (Ella-Nanu Oya)", "Nine Arch Bridge", "Little Adam's Peak", "Ceylon Tea Factory", "Kirinda & Tissa Temples", "Mountain Views", "Wildlife Photography"],
     inclusions: [
