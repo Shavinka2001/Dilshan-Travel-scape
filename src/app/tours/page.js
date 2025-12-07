@@ -44,7 +44,7 @@ export default function ToursPage() {
       <Header />
       
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-white py-20">
+      <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-white py-20 mt-[72px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-neutral mb-6 hero-title">

@@ -106,7 +106,7 @@ export const packages = [
       }
     },
     slug: "sri-lanka-highlights-6-days",
-    image: "/images/ninearch.jpg",
+    image: "/images/mirissa(1).jpg",
     gallery: [
       "/images/ella.jpg",
       "/images/hiriketiya.jpg",
@@ -184,9 +184,9 @@ export const packages = [
   {
     id: 2,
     title: "Sri Lanka 9-Day Cultural & Nature Tour",
-    subtitle: "Complete Island Experience: Ancient Kingdoms, Hill Country, Wildlife & Beaches",
+    subtitle: "Ultimate Sri Lanka: Culture, Hills, Wildlife & Coast",
     description: "The ultimate 9-day Sri Lanka tour—explore ancient cities, cultural landmarks, hill-country landscapes, wildlife safaris, and pristine beaches in one perfect adventure.",
-    longDescription: "Discover Sri Lanka in 9 unforgettable days—explore ancient cities, iconic cultural sites, lush hill country, exciting wildlife safaris, and pristine southern beaches. The perfect all-in-one Sri Lanka tour experience.",
+    longDescription: "Discover Sri Lanka in 9 unforgettable days—exploring ancient cities, cultural icons, lush hill country, thrilling wildlife safaris, and pristine southern beaches for the ultimate all-in-one adventure.",
     duration: "9 days / 8 nights",
     price: "2 persons: $700 | 4 persons: $1000",
     priceFrom: 700,
@@ -241,7 +241,7 @@ export const packages = [
       }
     },
     slug: "sri-lanka-9-day-cultural-nature-tour",
-    image: "/images/ella.jpg",
+    image: "/images/sigiriya.jpg",
     gallery: [
       "/images/ella.jpg",
       "/images/galle.jpg",
@@ -506,7 +506,7 @@ export const packages = [
       }
     },
     slug: "south-coast-highlights-day-tour",
-    image: "/images/galle.jpg",
+    image: "/images/whale watching.jpg",
     gallery: [
       "/images/galle.jpg",
       "/images/turtel.jpg",
@@ -763,8 +763,8 @@ export const packages = [
     id: 5,
     title: "Cultural & Scenic Adventure – Day 2",
     subtitle: "Hill Country Trains, Ancient Temples & Rock Fortresses – Ella to Sigiriya",
-    description: "Experience Sri Lanka's ultimate cultural and scenic adventure combining hill country train rides, mountain hikes, tea estates, ancient temples, and UNESCO World Heritage sites. From Ella's mountain beauty to Sigiriya's ancient wonders.",
-    longDescription: "Embark on an unforgettable 2-day cultural and scenic journey starting with Ella's breathtaking landscapes, world-famous train rides, Little Adam's Peak hiking, and tea plantation experiences, followed by ancient temple explorations, elephant encounters, and culminating with the magnificent Sigiriya Rock Fortress climb.",
+    description: "Experience Sri Lanka’s top cultural and scenic highlights—from Ella’s hill country beauty and mountain hikes to tea estates, ancient temples, and the iconic Sigiriya UNESCO World Heritage site.",
+    longDescription: "Embark on a stunning 2-day Sri Lankan adventure, featuring Ella’s scenic views, Little Adam’s Peak hike, the iconic train ride, tea plantations, elephant encounters, ancient temples, and a memorable climb to the Sigiriya Rock Fortress",
     duration: "2 days / 1 night",
     price: "1 person: $250 | 2 persons: $350",
     priceFrom: 250,
@@ -840,12 +840,12 @@ export const packages = [
       }
     },
     slug: "cultural-scenic-adventure-tour",
-    image: "/images/ella.jpg",
+    image: "/images/dambulla.jpg",
     gallery: [
-      "/images/ella.jpg",
+      "/images/dambulla.jpg",
       "/images/sigiriya.jpg",
-      "/images/nuwaraeliya.jpg",
-      "/images/kandy-temple.jpg"
+      "/images/ambuluwawa (1).jpg",
+      "/images/pinnawala.jpg"
     ],
     highlights: ["Scenic Train Ride (Nanu Oya-Ella)", "Little Adam's Peak Hike", "Nine Arch Bridge", "Nuwara Eliya Colonial Architecture", "Ceylon Tea Factory Experience", "Ambuluwawa Multi-Religious Centre", "Temple of the Tooth Kandy", "Pinnawala Elephant Orphanage", "Sigiriya Rock Fortress", "Pidurangala Rock Sunset", "Dambulla Cave Temple"],
     inclusions: [

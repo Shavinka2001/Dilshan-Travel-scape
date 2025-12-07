@@ -104,7 +104,7 @@ export default function PackageDetailClient() {
       <Header />
       
       {/* Hero Section */}
-      <div className="relative h-[70vh] overflow-hidden">
+      <div className="relative h-[70vh] overflow-hidden mt-[72px]">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
